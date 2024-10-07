@@ -1,3 +1,7 @@
+@php
+    $socials = App\Models\Social::first();
+@endphp
+
 @extends('front.master')
 
 @section('title',__('front.Recafco'))
@@ -34,7 +38,7 @@
                                     <a href="{{ route('front.projects') }}" class="button button--link hover-add-underline">
                                         see projects
                                     </a>
-                                    <a href="{{ route('front.projects') }}" class="button dark-button button--link hover-add-underline">
+                                    <a href="{{ route('front.contacts') }}" class="button dark-button button--link hover-add-underline">
                                         send inquiry
                                     </a>
                                 </div>
@@ -47,6 +51,7 @@
 
 
             </div>
+
             <div class="swiper-button-next main-swiper-arrow">
                 <img src="{{asset('assets-front')}}/images/icon/arrow-right.svg" alt="images" />
             </div>
@@ -113,9 +118,9 @@
             <div class="row">
                 <div class="col-12">
                     <p>
-                        <span>RECAFCO</span> powers Kuwait's growth with top-tier manufacturing & mega-projects, supporting <span>Kuwait 2035 vision.</span>
+                        <span>{{ __('front.Recafco') }}</span> {{ __('front.mobile_desc1') }}<span>{{ __('front.mobile_vision') }}</span>
                     </p>
-                    <a href="about.html" class="button button--primary bg-red hover-add-swipe">
+                    <a href="{{ route('front.about') }}" class="button button--primary bg-red hover-add-swipe">
                         About Recafco
                     </a>
                 </div>
@@ -132,9 +137,7 @@
                         <div class="row justify-content-end">
                             <div class="col-lg-8 col-md-12 col-sm-12">
                                 <p>
-                                    <span>RECAFCO</span> drives Kuwait's growth through exceptional manufacturing and
-                                    mega-project execution, aligning with global standards and the <span>Kuwait 2035
-                                        vision.</span>
+                                    {{ __('front.second_sec_desc1') }}
                                 </p>
                             </div>
                         </div>
@@ -144,9 +147,7 @@
                         <div class="row justify-content-end">
                             <div class="col-lg-8 col-md-12 col-sm-12">
                                 <p>
-                                    Advanced machinery fills our <span>80,000 m²</span> facility. One of the few
-                                    companies ranked as <span>category 1</span> in general contracting by <span>Central
-                                        Agency for Public Tenders.</span>
+                                    {{ __('front.second_sec_desc2') }}
                                 </p>
                             </div>
                         </div>
@@ -300,7 +301,7 @@
                                 <div class="counting" data-count="{{ $counters->projects }}">0</div>
                                 <span>+</span>
                             </div>
-                            <p>Completed projects</p>
+                            <p>{{ __('front.count_projects') }}</p>
                         </div>
                         <!---->
                         <div
@@ -309,7 +310,7 @@
                                 <div class="counting" data-count="{{ $counters->employes }}">0</div>
                                 <span>+</span>
                             </div>
-                            <p>Employees strong and growing</p>
+                            <p>{{ __('front.count_employees') }}</p>
                         </div>
                         <!---->
                         <div
@@ -318,7 +319,7 @@
                                 <div class="counting" data-count="{{ $counters->awards }}">0</div>
                                 <span>+</span>
                             </div>
-                            <p>Awards won</p>
+                            <p>{{ __('front.count_awards') }}</p>
                         </div>
                     </div>
                     <!---->
@@ -363,18 +364,18 @@
     <!-- mobile only end-->
     <section class="build-together position-relative mobile-only">
         <div class="mobile-upper-text align-items-center justify-content-center flex-column row-gap-3">
-            <h4>let’s build <span class="d-block">together</span></h4>
-            <a href="help.html" class="button button--primary bg-red hover-add-swipe">
-                view career openings
+            <h4>{{ __('front.lets_build') }} <span class="d-block">{{ __('front.together') }}</span></h4>
+            <a href="{{ $socials->career_open }}" class="button button--primary bg-red hover-add-swipe">
+                {{ __('front.career_openings') }}
             </a>
         </div>
         <div class="flex-reverse p-0">
             <div
                 class="build-together-absolute-box d-flex align-items-center justify-content-center flex-column row-gap-3">
-                <span>let’s talk</span>
-                <h4>need to reach us?</h4>
-                <a href="help.html" class="button button--primary bg-red hover-add-swipe">
-                    Contact us
+                <span>{{ __('front.lets_talk') }}</span>
+                <h4>{{ __('front.need_to_reach_us') }}</h4>
+                <a href="{{ route('front.contacts') }}" class="button button--primary bg-red hover-add-swipe">
+                    {{ __('front.contact') }}
                 </a>
             </div>
             <div class="row">
@@ -382,9 +383,9 @@
                     <div class="build-together-image-part position-relative d-flex align-items-center"
                         style="background: url({{asset('assets-front')}}/images/production/contact.PNG);">
                         <div class="text-image">
-                            <h4>let’s build <span class="d-block">together</span></h4>
-                            <a href="help.html" class="button button--primary bg-red hover-add-swipe">
-                                view career openings
+                            <h4>{{ __('front.lets_build') }} <span class="d-block">{{ __('front.together') }}</span></h4>
+                            <a href="{{ $socials->career_open }}" class="button button--primary bg-red hover-add-swipe">
+                                {{ __('front.career_openings') }}
                             </a>
                         </div>
                     </div>

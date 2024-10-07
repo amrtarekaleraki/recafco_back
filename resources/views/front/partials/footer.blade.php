@@ -11,7 +11,7 @@
                 <img src="{{asset('assets-front')}}/images/logo/color-recafco-logo.svg" alt="Logo" />
             </div>
             <a href="{{ route('front.projects') }}" class="button button--link hover-add-underline d-flex align-items-center gap-3">
-                <span>For sales inquires</span>
+                <span>{{ __('front.for_sales_inquiries') }}</span>
                 <img src="{{asset('assets-front')}}/images/icon/danger-arrow.svg" alt="icon" />
             </a>
         </div>
@@ -34,13 +34,13 @@
             <!---->
             <div class="nav--footer">
                 <ul class="d-flex flex-wrap align-items-center justify-content-center">
-                    <li><a href="{{ route('front.contacts') }}" target="_blank">Contact</a></li>
-                    <li><a href="{{ route('front.about') }}" target="_blank">about</a></li>
-                    <li><a href="{{ route('front.construction') }}" target="_blank">Construction</a></li>
-                    <li><a href="{{ route('front.projects') }}" target="_blank">projects</a></li>
-                    <li><a href="{{ route('front.production') }}" target="_blank">Precast</a></li>
-                    <li><a href="{{ route('front.production') }}" target="_blank">Hollowcore</a></li>
-                    <li><a href="{{ route('front.production') }}" target="_blank">GRC</a></li>
+                    <li><a href="{{ route('front.contacts') }}" target="_blank">{{ __('front.contact') }}</a></li>
+                    <li><a href="{{ route('front.about') }}" target="_blank">{{ __('front.about') }}</a></li>
+                    <li><a href="{{ route('front.construction') }}" target="_blank">{{ __('front.construction') }}</a></li>
+                    <li><a href="{{ route('front.projects') }}" target="_blank">{{ __('front.projects') }}</a></li>
+                    <li><a href="{{ route('front.production') }}" target="_blank">{{ __('front.Precast') }}</a></li>
+                    <li><a href="{{ route('front.production') }}" target="_blank">{{ __('front.Hollowcore') }}</a></li>
+                    <li><a href="{{ route('front.production') }}" target="_blank">{{ __('front.GRC') }}</a></li>
                 </ul>
             </div>
         </div>
@@ -50,11 +50,11 @@
         <div class="container">
             <div class="content d-flex flex-wrap align-items-center  row-gap-3">
                 <a href="{{ $socials->career_open }}" class="text button button--link hover-add-underline d-flex align-items-center gap-3">
-                    career openings
+                    {{ __('front.career_openings') }}
                 </a>
                 <p class="copyright">
-                    ©2024 Real Estate Construction & Fabrication Co. - K.S.C (Closed) Kuwait. All Rights Reserved.
-                    Powered by <a href="#">JARA</a>
+                    {{ __('front.copyright') }}
+                     <a href="#">JARA</a>
                 </p>
             </div>
         </div>

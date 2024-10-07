@@ -23,30 +23,30 @@
                 <!----------------------------------------------------------------->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link @yield('about-active')" aria-current="page" href="{{ route('front.about') }}">about</a>
+                        <a class="nav-link @yield('about-active')" aria-current="page" href="{{ route('front.about') }}">{{ __('front.about_header') }}</a>
                         <img class="icon-mobile" src="{{asset('assets-front')}}/images/icon/arrow-nav.svg" alt="icon" />
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('production-active')" href="{{ route('front.production') }}">Production</a>
+                        <a class="nav-link @yield('production-active')" href="{{ route('front.production') }}">{{ __('front.production_header') }}</a>
                         <img class="icon-mobile" src="{{asset('assets-front')}}/images/icon/arrow-nav.svg" alt="icon" />
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('construction-active')" href="{{ route('front.construction') }}">Construction</a>
+                        <a class="nav-link @yield('construction-active')" href="{{ route('front.construction') }}">{{ __('front.construction_header') }}</a>
                         <img class="icon-mobile" src="{{asset('assets-front')}}/images/icon/arrow-nav.svg" alt="icon" />
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('projects-active')" href="{{ route('front.projects') }}">Projects</a>
+                        <a class="nav-link @yield('projects-active')" href="{{ route('front.projects') }}">{{ __('front.projects_header') }}</a>
                         <img class="icon-mobile" src="{{asset('assets-front')}}/images/icon/arrow-nav.svg" alt="icon" />
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('contacts-active')" href="{{ route('front.contacts') }}">contacts</a>
+                        <a class="nav-link @yield('contacts-active')" href="{{ route('front.contacts') }}">{{ __('front.contacts_header') }}</a>
                         <img class="icon-mobile" src="{{asset('assets-front')}}/images/icon/arrow-nav.svg" alt="icon" />
                     </li>
 
                     <li class="icon-mobile">
 
                         <form class="input-group d-flex align-items-center justify-content-between" id="mobileFormId" action="{{ route('front.search') }}" method="GET">
-                            <input type="text" name="search" class="form-control" placeholder="Search..."
+                            <input type="text" name="search" class="form-control" placeholder="{{ __('front.search_icon') }}"
                             value="{{ old('search') }}" aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <a href="#" id="submit-mobile" class="btn" type="button">
@@ -91,7 +91,7 @@
             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 
                 <form class="input-group" id="yourFormId" action="{{ route('front.search') }}" method="GET">
-                    <input type="text" name="search" class="form-control" placeholder="Search..."
+                    <input type="text" name="search" class="form-control" placeholder="{{ __('front.search_icon') }}"
                     value="{{ old('search') }}" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                         <a href="#" id="submit-form" type="button">

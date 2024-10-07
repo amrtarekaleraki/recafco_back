@@ -15,12 +15,12 @@
     <div class="container">
         <div class="text-box" data-aos="fade-up">
             <span class="d-block mb-2">
-                it’s more than construction
+                {{ __('front.construction_title') }}
             </span>
             <p class="mb-0">
-                A history of
+                {{ __('front.construction_subtitle') }}
             </p>
-            <h3 class="mb-4">construction excellence</h3>
+            <h3 class="mb-4">{{ __('front.construction_desc') }}</h3>
             <div class="tags d-flex flex-wrap align-items-center gap-3 row-gap-1">
                 @foreach($categories as $category)
                    <a href="#" class="button button--link hover-add-underline">{{ $category->title }}</a>
@@ -42,19 +42,12 @@
                 <div class="row align-items-end">
                     <div class="col-lg-6 col-md-12">
                         <div class="subtitle">
-                            <h5 class="mb-3">CONSTRUCTION EXCELLENCE</h5>
+                            <h5 class="mb-3">{{ __('front.construction_first_title') }}</h5>
                             <p class="mb-2">
-                                <span>RECAFCO's</span> commitment to excellence shines through in our cost-effective
-                                projects, delivered without sacrificing <span>quality</span>, <span>schedule</span>, or
-                                <span>design</span>.
+                                {{ __('front.construction_first_desc') }}
                             </p>
-                            <span class="d-block description mb-3">
-                                Our success is fueled by a diverse team of skilled professionals and experienced
-                                leadership.
-                            </span>
                             <a href="{{ route('front.about') }}"
-                                class="button button--primary bg-red hover-add-swipe d-flex align-items-center justify-content-center">LEARN
-                                MORE</a>
+                                class="button button--primary bg-red hover-add-swipe d-flex align-items-center justify-content-center">{{ __('front.construction_learn_more') }}</a>
                         </div>
 
                     </div>
@@ -100,18 +93,12 @@
                     <!---->
                     <div class="col-lg-6 col-md-12">
                         <div class="subtitle">
-                            <h5 class="mb-3">TRUSTED PARTNER</h5>
+                            <h5 class="mb-3">{{ __('front.construction_trusted_title') }}</h5>
                             <p class="mb-2">
-                                As a <span>Class 1 contractor</span> for general construction, we've earned our
-                                reputation as a leading force in Kuwait's construction industry.
+                                {{ __('front.construction_trusted_desc') }}
                             </p>
-                            <span class="d-block description mb-3">
-                                Our integrated engineering solutions and proven expertise have enabled us to
-                                successfully undertake major projects across the country.
-                            </span>
                             <a href="{{ route('front.about') }}"
-                                class="button button--primary bg-red hover-add-swipe d-flex align-items-center justify-content-center">About
-                                us</a>
+                                class="button button--primary bg-red hover-add-swipe d-flex align-items-center justify-content-center">{{ __('front.construction_trusted_about') }}</a>
                         </div>
 
                     </div>

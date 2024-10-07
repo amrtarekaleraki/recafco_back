@@ -19,14 +19,14 @@
         <div class="container">
             <div class="text-box" data-aos="fade-up">
                 <span class="d-block mb-2">
-                    contact us
+                    {{ __('front.contact_title') }}
                 </span>
                 <p class="mb-0">
-                    get in touch
+                    {{ __('front.contact_subtitle') }}
                 </p>
-                <h3 class="mb-4">how can we help?</h3>
+                <h3 class="mb-4">{{ __('front.contact_desc') }}</h3>
                 <div class="tags d-flex flex-wrap align-items-center gap-3 row-gap-1">
-                    <a href="#" class="button button--link hover-add-underline">Send a Message Now</a>
+                    <a href="#" class="button button--link hover-add-underline">{{ __('front.contact_message_header') }}</a>
                 </div>
             </div>
         </div>
@@ -41,36 +41,36 @@
 <div class="projects-section bg-white">
     <!--how can we help?-->
     <div class="help-section">
-        <h4 class="text-center title-part ">how can we help?</h4>
+        <h4 class="text-center title-part ">{{ __('front.contact_help') }}</h4>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                     <div class="help-details-item">
-                        <p>FACTORY & HEAD OFFICE</p>
+                        <p>{{ __('front.contact_factory_title') }}</p>
                         <div class="mb-3">
                             <span class="d-block">{{ $socials->factory_location }}</span>
 
                         </div>
                         <div class="d-flex align-items-center gap-4">
-                            <span>Tel</span>
+                            <span>{{ __('front.contact_factory_phone') }}</span>
                             <span>: {{ $socials->factory_phone}}</span>
                         </div>
                         <div class="d-flex align-items-center gap-4">
-                            <span>Fax</span>
+                            <span>{{ __('front.contact_factory_fax') }}</span>
                             <span>: {{ $socials->factory_fax}}</span>
                         </div>
                     </div>
                     <div class="help-details-item">
-                        <p>KUWAIT CITY OFFICE</p>
+                        <p>{{ __('front.contact_office_title') }}</p>
                         <div class="mb-3">
                             <span class="d-block">{{ $socials->office_location }}</span>
                         </div>
                         <div class="d-flex align-items-center gap-4">
-                            <span>Tel</span>
+                            <span>{{ __('front.contact_factory_phone') }}</span>
                             <span>: {{ $socials->office_phone }}</span>
                         </div>
                         <div class="d-flex align-items-center gap-4">
-                            <span>Fax</span>
+                            <span>{{ __('front.contact_factory_fax') }}</span>
                             <span>: {{ $socials->office_fax }}</span>
                         </div>
                     </div>
@@ -79,66 +79,59 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                     <x-success-alert></x-success-alert>
                     <form id="yourFormId" action="{{ route('admin.contacts.store') }}" method="POST">
-                    @csrf
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="form-group">
-                                <label class="form-label">FIRST NAME<span>*</span></label>
-                                <input type="text" name="f_name" class="form-control">
-                                <x-validation-error field="f_name"></x-validation-error>
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">{{ __('front.contact_fname') }}<span>*</span></label>
+                                    <input type="text" name="f_name" class="form-control">
+                                    <x-validation-error field="f_name"></x-validation-error>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">{{ __('front.contact_lname') }}<span>*</span></label>
+                                    <input type="text" name="l_name" class="form-control">
+                                    <x-validation-error field="l_name"></x-validation-error>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">{{ __('front.contact_email') }}<span>*</span></label>
+                                    <input type="email" name="email" class="form-control">
+                                    <x-validation-error field="email"></x-validation-error>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">{{ __('front.contact_phone') }}<span>*</span></label>
+                                    <input type="tel" name="phone" class="form-control">
+                                    <x-validation-error field="phone"></x-validation-error>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">{{ __('front.contact_subject') }}<span>*</span></label>
+                                    <input type="text" name="subject" class="form-control">
+                                    <x-validation-error field="subject"></x-validation-error>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">{{ __('front.contact_message') }}<span>*</span></label>
+                                    <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <x-validation-error field="message"></x-validation-error>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="button button--primary bg-red hover-add-swipe">
+                                    {{ __('front.contact_submit') }}
+                                </button>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-12">
-                            <div class="form-group">
-                                <label class="form-label">LAST NAME<span>*</span></label>
-                                <input type="text" name="l_name" class="form-control">
-                                <x-validation-error field="l_name"></x-validation-error>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label class="form-label">EMAIL<span>*</span></label>
-                                <input type="text" name="email" class="form-control">
-                                <x-validation-error field="email"></x-validation-error>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label class="form-label">PHONE<span>*</span></label>
-                                <input type="text" name="phone" class="form-control">
-                                <x-validation-error field="phone"></x-validation-error>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label class="form-label">SUBJECT<span>*</span></label>
-                                <input type="text" name="subject" class="form-control">
-                                <x-validation-error field="subject"></x-validation-error>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label class="form-label">MESSAGE<span>*</span></label>
-                                <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                <x-validation-error field="message"></x-validation-error>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <a href="#" id="submit-form" class="button button--primary bg-red hover-add-swipe">
-                                submit
-                            </a>
-                        </div>
-                    </div>
                     </form>
                 </div>
                 {{-- end form --}}
-
-                <script>
-                    document.getElementById('submit-form').addEventListener('click', function(e) {
-                        e.preventDefault(); // Prevent the default anchor behavior
-                        document.getElementById('yourFormId').submit(); // Replace 'yourFormId' with the actual ID of your form
-                    });
-                </script>
 
             </div>
         </div>
@@ -149,7 +142,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="project-category-item">
-                        <h3 class="mb-3">Email</h3>
+                        <h3 class="mb-3">{{ __('front.contact_email') }}</h3>
                         <p>
                             <a href="#">{{ $socials->email }}</a>
                         </p>
@@ -158,14 +151,14 @@
                 <!---->
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="project-category-item">
-                        <h3 class="mb-3">Commercial No.</h3>
+                        <h3 class="mb-3">{{ __('front.contact_commercial_no') }}</h3>
                         <p>{{ $socials->comercial_no }}</p>
                     </div>
                 </div>
                 <!---->
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="project-category-item">
-                        <h3 class="mb-3">Website</h3>
+                        <h3 class="mb-3">{{ __('front.contact_website') }}</h3>
                         <p>
                             <a href="{{ route('front.index') }}">
                                 {{ $socials->website }}
@@ -191,18 +184,18 @@
 <!---->
 <section class="build-together position-relative bg-white">
     <div class="mobile-upper-text align-items-center justify-content-center flex-column row-gap-3">
-        <h4>let’s build <span class="d-block">together</span></h4>
+        <h4>{{ __('front.lets_build') }} <span class="d-block">{{ __('front.together') }}</span></h4>
         <a href="{{ $socials->career_open }}" class="button button--primary bg-red hover-add-swipe">
-            view career openings
+            {{ __('front.career_openings') }}
         </a>
     </div>
     <div class="flex-reverse p-0">
         <div
             class="build-together-absolute-box d-flex align-items-center justify-content-center flex-column row-gap-3">
-            <span>let’s talk</span>
-            <h4>need to reach us?</h4>
+            <span>{{ __('front.lets_talk') }}</span>
+            <h4>{{ __('front.need_to_reach_us') }}</h4>
             <a href="{{ route('front.contacts') }}" class="button button--primary bg-red hover-add-swipe">
-                Contact us
+                {{ __('front.contact') }}
             </a>
         </div>
         <div class="row">
@@ -210,9 +203,9 @@
                 <div class="build-together-image-part position-relative d-flex align-items-center"
                     style="background: url({{asset('assets-front')}}/images/production/contact.PNG);">
                     <div class="text-image">
-                        <h4>let’s build <span class="d-block">together</span></h4>
+                        <h4>{{ __('front.lets_build') }} <span class="d-block">{{ __('front.together') }}</span></h4>
                         <a href="{{ $socials->career_open }}" class="button button--primary bg-red hover-add-swipe">
-                            view career openings
+                            {{ __('front.career_openings') }}
                         </a>
                     </div>
                 </div>

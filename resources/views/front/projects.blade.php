@@ -36,7 +36,7 @@
     <div class="container-fluid p-0">
         <ul class="nav nav-tabs border-0 d-flex align-items-center justify-content-center flex-wrap">
             <li>
-                <button class="btn btn-filter-taps active" id="all">All Projects</button>
+                <button class="btn btn-filter-taps active" id="all">{{ __('front.all_projects') }}</button>
             </li>
             @foreach($categories as $category)
                 @if(isset($projectCounts[$category->id]) && $projectCounts[$category->id] > 0)
@@ -96,18 +96,18 @@
     <!---->
     <section class="build-together position-relative">
         <div class="mobile-upper-text align-items-center justify-content-center flex-column row-gap-3">
-            <h4>let’s build <span class="d-block">together</span></h4>
+            <h4>{{ __('front.lets_build') }} <span class="d-block">{{ __('front.together') }}</span></h4>
             <a href="{{ $socials->career_open }}" class="button button--primary bg-red hover-add-swipe">
-                view career openings
+                {{ __('front.career_openings') }}
             </a>
         </div>
         <div class="flex-reverse p-0">
             <div
                 class="build-together-absolute-box d-flex align-items-center justify-content-center flex-column row-gap-3">
-                <span>let’s talk</span>
-                <h4>need to reach us?</h4>
+                <span>{{ __('front.lets_talk') }}</span>
+                <h4>{{ __('front.need_to_reach_us') }}</h4>
                 <a href="{{ route('front.contacts') }}" class="button button--primary bg-red hover-add-swipe">
-                    Contact us
+                    {{ __('front.contact') }}
                 </a>
             </div>
             <div class="row">
@@ -115,9 +115,9 @@
                     <div class="build-together-image-part position-relative d-flex align-items-center"
                         style="background: url({{asset('assets-front')}}/images/production/contact.PNG);">
                         <div class="text-image">
-                            <h4>let’s build <span class="d-block">together</span></h4>
+                            <h4>{{ __('front.lets_build') }} <span class="d-block">{{ __('front.together') }}</span></h4>
                             <a href="{{ $socials->career_open }}" class="button button--primary bg-red hover-add-swipe">
-                                view career openings
+                                {{ __('front.career_openings') }}
                             </a>
                         </div>
                     </div>
