@@ -153,5 +153,7 @@ return [
     'are_you_sure'           => 'هل تريد حذف هذا العنصر ؟',
     'created_at'     => 'التاريخ',
     'contact_successfully' => 'تم إرسال الرساله بنجاح',
-
+    'profile' => 'الملف الشخصي',
+    'submit' => 'إرسال',
+    'add_new' => 'إضافة جديد',
 ];

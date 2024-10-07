@@ -32,42 +32,42 @@
 
 
         {{-- parteners --}}
-        <x-sidebar-tab href="{{ route('admin.parteners.index') }}" icon="fe-codesandbox" name="{{ __('keywords.parteners') }}"></x-sidebar-tab>
+        <x-sidebar-tab href="{{ route('admin.parteners.index') }}" icon="fe-user" name="{{ __('keywords.parteners') }}"></x-sidebar-tab>
 
 
         {{-- certificates --}}
-        <x-sidebar-tab href="{{ route('admin.certificates.index') }}" icon="fe-codesandbox" name="{{ __('keywords.certificates') }}"></x-sidebar-tab>
+        <x-sidebar-tab href="{{ route('admin.certificates.index') }}" icon="fe-layers" name="{{ __('keywords.certificates') }}"></x-sidebar-tab>
 
 
         {{-- accreditations --}}
-        <x-sidebar-tab href="{{ route('admin.accreditations.index') }}" icon="fe-codesandbox" name="{{ __('keywords.accreditations') }}"></x-sidebar-tab>
+        <x-sidebar-tab href="{{ route('admin.accreditations.index') }}" icon="fe-folder" name="{{ __('keywords.accreditations') }}"></x-sidebar-tab>
 
 
         {{-- counters --}}
         <x-sidebar-tab href="{{ route('admin.counters.index') }}" icon="fe-codesandbox" name="{{ __('keywords.counters') }}"></x-sidebar-tab>
 
         {{-- socials --}}
-        <x-sidebar-tab href="{{ route('admin.socials.index') }}" icon="fe-codesandbox" name="{{ __('keywords.socials') }}"></x-sidebar-tab>
+        <x-sidebar-tab href="{{ route('admin.socials.index') }}" icon="fe-share-2" name="{{ __('keywords.socials') }}"></x-sidebar-tab>
 
 
         {{-- products --}}
-        <x-sidebar-tab href="{{ route('admin.products.index') }}" icon="fe-codesandbox" name="{{ __('keywords.products') }}"></x-sidebar-tab>
+        <x-sidebar-tab href="{{ route('admin.products.index') }}" icon="fe-credit-card" name="{{ __('keywords.products') }}"></x-sidebar-tab>
 
 
         {{-- contacts --}}
-        <x-sidebar-tab href="{{ route('admin.contacts.index') }}" icon="fe-codesandbox" name="{{ __('keywords.contacts') }}"></x-sidebar-tab>
+        <x-sidebar-tab href="{{ route('admin.contacts.index') }}" icon="fe-send" name="{{ __('keywords.contacts') }}"></x-sidebar-tab>
 
 
         {{-- informations --}}
-        <x-sidebar-tab href="{{ route('admin.informations.index') }}" icon="fe-codesandbox" name="{{ __('keywords.informations') }}"></x-sidebar-tab>
+        <x-sidebar-tab href="{{ route('admin.informations.index') }}" icon="fe-shuffle" name="{{ __('keywords.informations') }}"></x-sidebar-tab>
 
 
         {{-- categories --}}
-        <x-sidebar-tab href="{{ route('admin.categories.index') }}" icon="fe-codesandbox" name="{{ __('keywords.categories') }}"></x-sidebar-tab>
+        <x-sidebar-tab href="{{ route('admin.categories.index') }}" icon="fe-trello" name="{{ __('keywords.categories') }}"></x-sidebar-tab>
 
 
         {{-- projects --}}
-        <x-sidebar-tab href="{{ route('admin.projects.index') }}" icon="fe-codesandbox" name="{{ __('keywords.projects') }}"></x-sidebar-tab>
+        <x-sidebar-tab href="{{ route('admin.projects.index') }}" icon="fe-package" name="{{ __('keywords.projects') }}"></x-sidebar-tab>
 
 
         </ul>

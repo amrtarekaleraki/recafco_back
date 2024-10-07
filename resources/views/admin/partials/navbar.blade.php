@@ -22,7 +22,7 @@
           </span>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="{{ route('admin.profile') }}">Profile</a>
+          <a class="dropdown-item" href="{{ route('admin.profile') }}">{{ __('keywords.profile') }}</a>
           {{-- <a class="dropdown-item" href="#">Settings</a>
           <a class="dropdown-item" href="#">Activities</a> --}}
           <form action="{{ route('admin.logout') }}" method="POST">
