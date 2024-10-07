@@ -14,17 +14,41 @@
 
 @section('slider')
 
-    <section class="hero-section position-relative without-overlay position-relative d-flex flex-column align-items-center justify-content-center"
-    style="background: url({{asset('assets-front')}}/images/slider/slider-three.PNG);">
-    <div class="container-fluid">
-        <div class="absolute-box">
-            {{-- <a href="#" class="button button--link hover-add-underline">
-                <span>Scientific center</span>
-                <img src="{{asset('assets-front')}}/images/icon/danger-arrow.svg" alt="icon" />
-            </a> --}}
+<section class="home-main-slider position-relative">
+    <!-- Swiper -->
+    <div class="swiper mySwiper main-swiper">
+        <div class="swiper-wrapper">
+
+            @if (count($projects) > 0)
+            @foreach ($projects as $project)
+                <div class="swiper-slide position-relative">
+                    <div class="image-slider">
+                        <img class="d-block w-100 img-fluid" src="{{ asset("storage/project_image1/$project->image") }}" alt="image" />
+                    </div>
+                    <div class="content-slider">
+                        <div class="container-fluid">
+                            <a href="{{ route('front.singleproject',$project) }}" class="button button--link hover-add-underline">
+                                <span>{{ $project->product->title }}, <span>{{ $project->title }}</span></span>
+                                <img src="{{asset('assets-front')}}/images/icon/danger-arrow.svg" alt="icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            @endif
+
+
+
         </div>
+
+        {{-- <div class="swiper-button-next main-swiper-arrow">
+            <img src="{{asset('assets-front')}}/images/icon/arrow-right.svg" alt="images" />
+        </div>
+        <div class="swiper-button-prev main-swiper-arrow">
+            <img src="{{asset('assets-front')}}/images/icon/arrow-left.svg" alt="images" />
+        </div> --}}
     </div>
-    </section>
+</section>
 
 
 @endsection

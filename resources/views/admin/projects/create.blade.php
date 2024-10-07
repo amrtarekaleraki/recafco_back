@@ -65,7 +65,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
-                                        <x-form-label field="image"></x-form-label>
+                                        <x-form-label field="image_home"></x-form-label>
                                       <input type="file" name="image" class="form-control">
                                       <x-validation-error field="image"></x-validation-error>
                                     </div>

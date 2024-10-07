@@ -41,8 +41,8 @@
 
 @section('content')
 
-        <section class="page-layout-with-bg">
-            <div class="overview">
+        <section class="production-page">
+            <div class="overview padding-section">
                 <div class="container">
                     <div class="row mb-4">
                         <div class="col-12 mb-5">
@@ -104,7 +104,7 @@
                 </div>
             </div>
             <!---->
-            <section class="build-together bg-transparent position-relative">
+            <section class="build-together padding-section bg-white position-relative">
                 <div class="mobile-upper-text align-items-center justify-content-center flex-column row-gap-3">
                     <h4>{{ __('front.lets_build') }}<span class="d-block">{{ __('front.together') }}</span></h4>
                     <a href="{{ $socials->career_open }}" class="button button--primary bg-red hover-add-swipe">

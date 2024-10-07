@@ -56,9 +56,9 @@
 
 @section('content')
 
-    <section class="page-layout-with-bg">
+    <div class="about-page">
         <!--MISSION & VALUES-->
-        <div class="about-section" data-aos="fade-up">
+        <div class="about-section mission-vission padding-section" data-aos="fade-up">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-5 col-sm-12 mb-3">
@@ -68,7 +68,7 @@
                     </div>
                     <!---->
                     <div class="col-lg-6 col-md-7 col-sm-12 mb-3">
-                        <div class="body-description-part p-4">
+                        <div class="body-description-part">
                             <h3 class="mb-3">{{ __('front.mission_script_title') }}</h3>
                             <p class="mb-3">
                                 <span>{{ __('front.mission_script_subtitle') }}</span>
@@ -84,8 +84,8 @@
             </div>
         </div>
         <!--OUR LEGACY-->
-        <div class="our-legacy position-relative">
-            <div class="container-fluid p-4">
+        <div class="our-legacy position-relative padding-section">
+            <div class="container-fluid p-0">
                 <div class="body-description-part absolute-position">
                     <h3 class="mb-3">{{ __('front.legacy_script_title') }}</h3>
                     <p class="mb-3">
@@ -106,7 +106,7 @@
             </div>
         </div>
         <!--MISSION & VALUES-->
-        <div class="about-section">
+        <div class="about-section mission-vission padding-section">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-5 col-sm-12 mb-3">
@@ -131,8 +131,9 @@
                 </div>
             </div>
         </div>
+
         <!--Quality Assurance-->
-        <div class="quality-assurance position-relative mb-5">
+        <div class="quality-assurance position-relative padding-section bg-grey-section">
             <div class="container-fluid p-0">
                 <div class="body-description-part absolute-position reverse-col">
                     <h3 class="mb-3">{{ __('front.quality_script_title') }}</h3>
@@ -155,7 +156,7 @@
             </div>
         </div>
         <!--------------->
-        <div class="about-section mb-5">
+        <div class="about-section reverse-mission-vission padding-section bg-grey-section">
             <div class="container">
                 <div class="row align-items-center">
                     <!---->
@@ -218,9 +219,9 @@
             </div>
         </div>
         <!---->
-    </section>
+    </div>
     <!---->
-    <section class="build-together position-relative">
+    <section class="build-together position-relative bg-grey-section">
         <div class="mobile-upper-text align-items-center justify-content-center flex-column row-gap-3">
             <h4>{{ __('front.lets_build') }}  <span class="d-block">{{ __('front.together') }}</span></h4>
             <a href="{{ $socials->career_open }}" class="button button--primary bg-red hover-add-swipe">

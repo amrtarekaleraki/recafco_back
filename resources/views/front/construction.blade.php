@@ -36,8 +36,8 @@
 
 @section('content')
 
-    <section class="page-layout-with-bg">
-        <div class="construction-excellence">
+    <section class="construction-page">
+        <div class="construction-excellence padding-section">
             <div class="container">
                 <div class="row align-items-end">
                     <div class="col-lg-6 col-md-12">
@@ -46,6 +46,9 @@
                             <p class="mb-2">
                                 {{ __('front.construction_first_desc') }}
                             </p>
+                            <span class="d-block description mb-3">
+
+                            </span>
                             <a href="{{ route('front.about') }}"
                                 class="button button--primary bg-red hover-add-swipe d-flex align-items-center justify-content-center">{{ __('front.construction_learn_more') }}</a>
                         </div>
@@ -79,7 +82,7 @@
             </div>
         </div>
         <!---->
-        <div class="construction-excellence partner" data-aos="fade-up">
+        <div class="construction-excellence partner padding-section" data-aos="fade-up">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12">

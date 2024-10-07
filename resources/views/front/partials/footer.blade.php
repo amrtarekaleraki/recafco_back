@@ -3,7 +3,7 @@
 @endphp
 
 
-<footer>
+<footer class="white-bg">
     <div class="container">
         <!---->
         <div class="footer__top d-flex align-items-center flex-wrap gap-5 row-gap-3">

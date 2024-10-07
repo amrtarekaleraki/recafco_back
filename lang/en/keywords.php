@@ -137,6 +137,7 @@ return [
     'value'     => 'value',
     'image2'     => 'image2',
     'slider_image'     => 'slider image',
+    'image_home' => 'Background Home Image',
 
 
     // common translations

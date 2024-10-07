@@ -25,7 +25,7 @@
                                     <th width="5%">#</th>
                                     <th>{{ __('keywords.title') }}</th>
                                     <th>{{ __('keywords.location') }}</th>
-                                    <th>{{ __('keywords.image') }}</th>
+                                    <th>{{ __('keywords.image_home') }}</th>
                                     <th>{{ __('keywords.client') }}</th>
                                     <th>{{ __('keywords.value') }}</th>
                                     <th>{{ __('keywords.featured') }}</th>

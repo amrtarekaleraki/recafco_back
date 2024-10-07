@@ -57,7 +57,7 @@ class UpdateProjectRequest extends FormRequest
             'subtitle_ar'        => __("keywords.subtitle_ar"),
             'description' => __("keywords.description_en"),
             'description_ar' => __("keywords.description_ar"),
-            'image'       => __("keywords.image"),
+            'image'       => __("keywords.image_home"),
             'image2'       => __("keywords.image2"),
             'slider_image'       => __("keywords.slider_image"),
             'value'       => __("keywords.value"),

@@ -130,7 +130,7 @@
 
 
                                 <div class="col-md-6">
-                                    <x-form-label field="image"></x-form-label> <br>
+                                    <x-form-label field="image_home"></x-form-label> <br>
                                     <img src="{{ asset("storage/project_image1/$project->image") }}"  width="50px">
                                 </div>
 
