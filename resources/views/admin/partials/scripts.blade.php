@@ -246,3 +246,21 @@
   gtag('js', new Date());
   gtag('config', 'UA-56159088-1');
 </script>
+
+<script src="https://cdn.tiny.cloud/1/qil0jvssf4tp1zk0d8xl5uedzk0mvmayn6d4kkf7tdw93byu/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        menubar: false,
+        content_css: 'https://cdn.tiny.cloud/1/no-api-key/tinymce/6/skins/ui/oxide/skin.min.css',
+        plugins: 'advlist autolink lists link image charmap print preview anchor',
+        toolbar: 'undo redo | formatselect | bold italic backcolor | \
+        alignleft aligncenter alignright alignjustify | \
+        bullist numlist outdent indent | removeformat',
+        height: 300
+    });
+</script>
+
+
+@stack('scripts')

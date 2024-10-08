@@ -81,7 +81,7 @@
                                 <div class="overview-items-details">
                                     <h4 class="mb-3">{{ $product->title }}</h4>
                                     <p class="mb-3">
-                                        {{ $product->description }}
+                                        {!! $product->description !!}
                                     </p>
                                     @if ($product->id == 1)
                                     <a href="{{ route('front.hollowcore',$product) }}" class="button button--primary bg-red hover-add-swipe">

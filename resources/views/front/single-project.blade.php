@@ -76,7 +76,7 @@
                 <div class="body-description-part absolute-position">
                     <h3 class="mb-3">{{ $project->subtitle }}</h3>
                     <p class="mb-3">
-                         {{ $project->description }}
+                         {!! $project->description !!}
                     </p>
                     <a href="{{ route('front.projects') }}" class="button button--primary bg-red hover-add-swipe">
                         all projects

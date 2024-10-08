@@ -36,6 +36,14 @@
 
 
 
+                                {{-- <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <x-form-label field="description_en"></x-form-label>
+                                        <textarea name="description" class="form-control"> </textarea>
+                                        <x-validation-error field="description"></x-validation-error>
+                                    </div>
+                                </div> --}}
+
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
                                         <x-form-label field="description_en"></x-form-label>
@@ -90,3 +98,9 @@
         </div>
     </div>
 @endsection
+
+
+@push('scripts')
+
+
+@endpush
