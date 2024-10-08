@@ -57,6 +57,19 @@ class ProductController extends Controller
             $data['image'] = $newImageName;
         }
 
+        if ($request->hasFile('slider_product')) {
+            $images = $request->file('slider_product');
+            $imageNames = [];
+
+            foreach ($images as $image) {
+                $newImageName = time() . '-' . $image->getClientOriginalName();
+                $image->storeAs('products_slider_images', $newImageName, 'public');
+                $imageNames[] = $newImageName;
+            }
+
+            $data['slider_product'] = json_encode($imageNames);
+        }
+
         Product::create($data);
 
         return to_route('admin.products.index')->with('success', __('keywords.created_successfully'));
@@ -120,9 +133,35 @@ class ProductController extends Controller
         }
 
 
+         // Handle multiple image update
+        if ($request->hasFile('slider_product')) {
+            $images = $request->file('slider_product');
+            $imageNames = [];
+
+            // Delete existing images if necessary (if you want to replace them)
+            if ($product->slider_product) {
+                $existingImages = json_decode($product->slider_product, true);
+                foreach ($existingImages as $existingImage) {
+                    Storage::delete("public/products_slider_images/$existingImage");
+                }
+            }
+
+            // Process and store new images
+            foreach ($images as $image) {
+                $newImageName = time() . '-' . $image->getClientOriginalName();
+                $image->storeAs('products_slider_images', $newImageName, 'public');
+                $imageNames[] = $newImageName;
+            }
+
+            // Save the images as a JSON array in the 'slider_product' column
+            $data['slider_product'] = json_encode($imageNames);
+        }
+
+
+
         $product->update($data);
 
-        return to_route('admin.products.index')->with('success', __('keywords.created_successfully'));
+        return to_route('admin.products.index')->with('success', __('keywords.updated_successfully'));
     }
 
     /**
@@ -132,6 +171,12 @@ class ProductController extends Controller
     {
         Storage::delete("public/products_images/$product->image");
         Storage::delete("public/products_pdf/$product->pdf");
+        if ($product->slider_product) {
+            $sliderImages = json_decode($product->slider_product, true);
+            foreach ($sliderImages as $sliderImage) {
+                Storage::delete("public/products_slider_images/$sliderImage");
+            }
+        }
         $product->delete();
         return to_route('admin.products.index')->with('success', __('keywords.deleted_successfully'));
     }

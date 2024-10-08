@@ -35,6 +35,13 @@ Route::group([
         Route::get('switch-language/{lang}', 'switchLanguage')->name('switch');
         Route::get('projects/{project}', 'SingleProject')->name('singleproject');
         Route::get('/search','search')->name('search');
+        // single product pages
+        Route::get('/precast/{product}', 'precast')->name('precast');
+        Route::get('/hollowcore/{product}', 'hollowcore')->name('hollowcore');
+        Route::get('/gfrc/{product}', 'gfrc')->name('gfrc');
+        Route::get('/patching_plant/{product}', 'patching_plant')->name('patching_plant');
+
+
     });
 });
 

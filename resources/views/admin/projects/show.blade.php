@@ -129,7 +129,7 @@
 
 
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-3">
                                     <x-form-label field="image_home"></x-form-label> <br>
                                     <img src="{{ asset("storage/project_image1/$project->image") }}"  width="50px">
                                 </div>
@@ -139,10 +139,19 @@
                                     <img src="{{ asset("storage/project_image2/$project->image2") }}"  width="50px">
                                 </div>
 
-                                <div class="col-md-6">
-                                    <x-form-label field="slider_image"></x-form-label> <br>
-                                    <img src="{{ asset("storage/project_slider/$project->slider_image") }}"  width="50px">
-                                </div>
+
+                                @php
+                                    $images = json_decode($project->slider_image,true);
+                                @endphp
+                            <div class="col-md-6">
+                                <x-form-label field="slider_image"></x-form-label> <br>
+                                @if(is_array($images) && count($images) > 0)
+                                    @foreach($images as $image)
+                                        <img src="{{ asset('storage/project_slider/' . $image) }}" width="50px">
+                                    @endforeach
+                                @endif
+                            </div>
+
 
 
                             </div>

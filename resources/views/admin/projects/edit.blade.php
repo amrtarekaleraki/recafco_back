@@ -171,11 +171,12 @@
                                     </div>
                                 </div>
 
+
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
                                         <x-form-label field="slider_image"></x-form-label>
-                                        <input type="file" name="slider_image" class="form-control">
-                                        <x-validation-error field="slider_image"></x-validation-error>
+                                      <input type="file" name="slider_image[]" class="form-control" multiple>
+                                      <x-validation-error field="slider_image"></x-validation-error>
                                     </div>
                                 </div>
 

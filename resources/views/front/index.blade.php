@@ -135,17 +135,17 @@
                 <div class="col-lg-7 col-md-12 col-sm-12 p-0">
                     <div class="first-details-description">
                         <div class="row justify-content-end">
-                            <div class="col-lg-8 col-md-12 col-sm-12">
+                            <div class="col-lg-7 col-md-12 col-sm-12">
                                 <p>
                                     {{ __('front.second_sec_desc1') }}
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <!---->
-                    <div class="second-details-description">
+                    <!--Desktop only-->
+                    <div class="second-details-description desktop-only">
                         <div class="row justify-content-end">
-                            <div class="col-lg-8 col-md-12 col-sm-12">
+                            <div class="col-lg-7 col-md-12 col-sm-12">
                                 <p>
                                     {{ __('front.second_sec_desc2') }}
                                 </p>
@@ -168,8 +168,77 @@
         </div>
     </section>
 
+        <!--mobile-only success parteners-->
+        <section class="interactive-section sucess-partner mobile-only" data-aos="fade-up">
+            <div class="container-fluid p-0">
+                <h2>{{ __('front.success_partners') }}</h2>
+                <div class="row align-items-center">
+                    <!---->
+                    <div class="col-lg-9 col-md-8 col-sm-12 p-0">
+                        <div class="interactive-section-swiper position-relative">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 col-md-11">
+                                    <!-- Swiper -->
+                                    <div class="swiper mySwiper clients">
+                                        <div class="swiper-wrapper">
+
+                                            @if (count($parteners) > 0)
+                                                @foreach ($parteners as $partener)
+                                                    <div class="swiper-slide">
+                                                        <div class="box">
+                                                            <img src="{{ asset("storage/parteners/$partener->image") }}" alt="logo" />
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--mobile-only  accreditations-->
+        <section class="logo-with-description mobile-only" data-aos="fade-up">
+            <div class="container-fluid p-0">
+                <h2>{{ __('front.Certificates_Memberships') }}</h2>
+                <div class="row align-items-center">
+                    <div class="col-lg-9 col-md-8 col-sm-12 p-0">
+                        <div class="h-100 logo-content-section position-relative">
+                            <div class="row justify-content-center">
+                                <!--Have script in the end of page Swiper -->
+                                <div class="swiper mySwiper three-logo">
+                                    <div class="swiper-wrapper">
+
+                                        @if (count($accreditations) > 0)
+                                            @foreach ($accreditations as $accreditation)
+                                                <div class="swiper-slide">
+                                                    <div class="item  text-center">
+                                                        <img class="d-block m-auto" src="{{ asset("storage/accreditations/$accreditation->image") }}" alt="logo" />
+                                                        <p>{{ $accreditation->title }}</p>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @endif
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
     <!--Bulding Section-->
-    <section class="bulding-section" data-aos="fade-up">
+    <section class="bulding-section desktop-only" data-aos="fade-up">
         <div class="container-fluid p-0">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-sm-12 p-0">
@@ -217,11 +286,8 @@
         </div>
     </section>
 
-
-
-
     <!--Section fade up after building-->
-    <section class="logo-with-description" data-aos="fade-up">
+    <section class="logo-with-description desktop-only" data-aos="fade-up">
         <div class="container-fluid p-0">
             <div class="row align-items-center">
                 <div class="col-lg-9 col-md-8 col-sm-12 p-0">
@@ -229,12 +295,12 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-11 col-md-12">
                                 <div class="col-lg-11 col-md-10">
-                                    <div class="swiper-button-next three-logo-arrow">
+                                    {{-- <div class="swiper-button-next three-logo-arrow">
                                         <img src="{{asset('assets-front')}}/images/icon/arrow-right.svg" alt="icon" />
                                     </div>
                                     <div class="swiper-button-prev three-logo-arrow">
                                         <img src="{{asset('assets-front')}}/images/icon/arrow-left.svg" alt="icon" />
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="col-lg-10 col-md-11">
@@ -323,15 +389,15 @@
                         </div>
                     </div>
                     <!---->
-                    <div class="interactive-section-swiper position-relative">
+                    <div class="interactive-section-swiper position-relative desktop-only">
                         <div class="row justify-content-center">
                             <div class="col-lg-11 col-md-10">
-                                <div class="swiper-button-next clients">
+                                {{-- <div class="swiper-button-next clients">
                                     <img src="{{asset('assets-front')}}/images/icon/arrow-right.svg" alt="icon" />
                                 </div>
                                 <div class="swiper-button-prev clients">
                                     <img src="{{asset('assets-front')}}/images/icon/arrow-left.svg" alt="icon" />
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="col-lg-10 col-md-11">
                                 <!-- Swiper -->

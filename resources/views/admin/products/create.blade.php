@@ -39,8 +39,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
                                         <x-form-label field="description_en"></x-form-label>
-                                      <textarea name="description" class="form-control"> </textarea>
-                                      <x-validation-error field="description"></x-validation-error>
+                                        <textarea name="description" class="form-control"> </textarea>
+                                        <x-validation-error field="description"></x-validation-error>
                                     </div>
                                 </div>
 
@@ -66,6 +66,14 @@
                                         <x-form-label field="image"></x-form-label>
                                       <input type="file" name="image" class="form-control">
                                       <x-validation-error field="image"></x-validation-error>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <x-form-label field="slider_product"></x-form-label>
+                                      <input type="file" name="slider_product[]" class="form-control" multiple>
+                                      <x-validation-error field="slider_product"></x-validation-error>
                                     </div>
                                 </div>
 

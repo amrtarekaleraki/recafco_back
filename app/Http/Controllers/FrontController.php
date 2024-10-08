@@ -120,4 +120,26 @@ class FrontController extends Controller
     }
 
 
+
+    public function precast(Product $product)
+    {
+        return view('front.precast',get_defined_vars());
+    }
+
+    public function patching_plant(Product $product)
+    {
+        return view('front.patching_plant',get_defined_vars());
+    }
+
+    public function hollowcore(Product $product)
+    {
+        return view('front.hollowcore',get_defined_vars());
+    }
+
+    public function gfrc(Product $product)
+    {
+        return view('front.gfrc',get_defined_vars());
+    }
+
+
 }

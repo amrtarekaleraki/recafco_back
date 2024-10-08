@@ -15,6 +15,8 @@
 <!--Main Js-->
 <script src="{{asset('assets-front')}}/js/main.js"></script>
 
+
+
 <script>
     $(document).ready(function () {
         var $btns = $('.btn').click(function () {
@@ -33,7 +35,7 @@
 <script>
     var swiper = new Swiper(".mySwiper.related-project", {
         slidesPerView: 1,
-        autoplay: true,
+        autoplay: false,
         spaceBetween: 30,
         breakpoints: {
             0: {
@@ -46,10 +48,10 @@
                 slidesPerView: 1.5,
             },
             1025: {
-                slidesPerView: 2,
+                slidesPerView: 2.2,
             },
             1366: {
-                slidesPerView: 2,
+                slidesPerView: 2.15,
             }
         },
         navigation: {
@@ -58,17 +60,43 @@
         },
     });
 </script>
-<script>
+
+{{-- <script>
     const swiperCounter = new Swiper('.swiper.project-value', {
         loop: true,
         autoplay:true,
         slidesPerView: 'auto',
-        spaceBetween: 0,
         autoplay: {
             delay: 5000,
             disableOnInteraction: true
         },
         centeredSlides: true,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: '.swiper-button-next.project-value-arrow',
+            prevEl: '.swiper-button-prev.project-value-arrow',
+        }
+    });
+</script> --}}
+
+
+<script>
+    const swiperCounter = new Swiper('.swiper.project-value', {
+        loop: true,
+        autoplay:true,
+        slidesPerView: 'auto',
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: true
+        },
+        centeredSlides: true,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
         navigation: {
             nextEl: '.swiper-button-next.project-value-arrow',
             prevEl: '.swiper-button-prev.project-value-arrow',
@@ -76,13 +104,16 @@
     });
 </script>
 
+
+<!--main-swiper-->
 <script>
     var swiperMain = new Swiper(".mySwiper.main-swiper", {
-        // autoplay: {
-        // delay: 4000,
-        // disableOnInteraction: false,
-        // },
-        speed: 4000,
+        autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        },
+        speed: 5000,
+        loop:false,
         effect: 'fade',
         fadeEffect: {
             crossFade: true,
@@ -93,6 +124,9 @@
         },
     });
 </script>
+
+
+
 <!-- Initialize Swiper -->
 <script>
     var swiperClients = new Swiper(".mySwiper.clients", {
@@ -102,6 +136,7 @@
         breakpoints: {
             0: {
                 slidesPerView: 4,
+                spaceBetween: 20,
             },
             400: {
                 slidesPerView: 4,
@@ -116,24 +151,23 @@
                 slidesPerView: 7,
             }
         },
-        navigation: {
-            nextEl: ".swiper-button-next.clients",
-            prevEl: ".swiper-button-prev.clients",
-        },
     });
 </script>
+
+
 <!-- Initialize three-logo -->
 <script>
     var swiperLogo = new Swiper(".mySwiper.three-logo", {
+        autoplay: true,
         breakpoints: {
             0: {
-                slidesPerView: 1,
+                slidesPerView: 3,
             },
             400: {
-                slidesPerView: 2,
+                slidesPerView: 3,
             },
             880: {
-                slidesPerView: 2,
+                slidesPerView: 3,
             },
             1025: {
                 slidesPerView: 3,
@@ -148,6 +182,8 @@
         },
     });
 </script>
+
+
 <!--five-logo Swiper-->
 <script>
     var swiperFiveLogo = new Swiper(".mySwiper.five-logo", {
@@ -176,6 +212,8 @@
     });
 </script>
 
+
+@stack('scripts')
 
 
 

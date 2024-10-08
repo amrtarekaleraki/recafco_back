@@ -36,7 +36,8 @@ class StoreProjectRequest extends FormRequest
             'description_ar'    => 'required|string',
             'image'       => 'required|mimes:jpg,png,svg',
             'image2'       => 'required|mimes:jpg,png,svg',
-            'slider_image'       => 'required|mimes:jpg,png,svg',
+            'slider_image'     => 'required',
+            'slider_image.*'     => 'mimes:jpg,png,svg',
             'value'    => 'required|string',
             'featured' => 'required|in:active,inactive',
         ];

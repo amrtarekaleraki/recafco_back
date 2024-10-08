@@ -38,8 +38,8 @@
                                             <td>{{ $product->title }}</td>
                                             <td>{{ $product->description }}</td>
                                             <td>
-                                                <a href="{{ asset("storage/products/$product->pdf") }}" download="{{ $product->pdf }}">
-                                                    Download PDF
+                                                <a href="{{ asset("storage/products_pdf/$product->pdf") }}" download="{{ $product->pdf }}">
+                                                    {{ __('keywords.download') }}
                                                 </a>
                                             </td>
                                             <td>

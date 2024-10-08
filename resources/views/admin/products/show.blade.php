@@ -46,7 +46,7 @@
 
                                 <div class="col-md-6">
                                     <x-form-label field="pdf"></x-form-label> <br>
-                                    <a href="{{ asset("storage/products/$product->pdf") }}" download="{{ $product->pdf }}">
+                                    <a href="{{ asset("storage/products_pdf/$product->pdf") }}" download="{{ $product->pdf }}">
                                         Download PDF
                                     </a>
                                 </div>
@@ -55,6 +55,21 @@
                                     <x-form-label field="image"></x-form-label> <br>
                                     <img src="{{ asset("storage/products_images/$product->image") }}"  width="50px">
                                 </div>
+
+
+                                @php
+                                    $images = json_decode($product->slider_product,true);
+                                @endphp
+                                <div class="col-md-6">
+                                    <x-form-label field="slider_product"></x-form-label> <br>
+                                    {{-- <img src="{{ asset("storage/products_slider_images/$product->image") }}"  width="50px"> --}}
+                                    @if(is_array($images) && count($images) > 0)
+                                        @foreach($images as $image)
+                                            <img src="{{ asset('storage/products_slider_images/' . $image) }}" width="50px">
+                                        @endforeach
+                                    @endif
+                                </div>
+
 
 
                             </div>

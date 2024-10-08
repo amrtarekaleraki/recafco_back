@@ -1676,7 +1676,7 @@ img.search {
   top: unset;
   bottom: 0;
   z-index: 9999;
-  padding: 80px 0px 30px 0px;
+  padding: 80px 1.5rem 30px 1.5rem;
   width: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 74%, rgba(0, 0, 0, 0.7) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#b3000000", GradientType=0);
@@ -3951,16 +3951,70 @@ html[dir=ltr] .project-value-swiper-slider .title-swiper .counting-div::after {
   padding: 1rem;
 }
 
+.text-pages {
+  padding: 3rem 0;
+}
+.text-pages h3 {
+  color: #4F4E51;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-family: "avenir-bold", sans-serif;
+}
+.text-pages h4 {
+  font-size: 1.4rem;
+  color: #4F4E51;
+  text-transform: uppercase;
+  margin: 2rem 0 0 0;
+  font-family: "avenir-bold", sans-serif;
+}
+.text-pages p {
+  font-size: 1.25rem;
+  color: #4F4E51;
+}
+.text-pages p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.text-pages p span {
+  font-family: "avenir-bold", sans-serif;
+}
+.text-pages ul {
+  margin-top: 2rem;
+}
+.text-pages ul li {
+  position: relative;
+}
+html[dir=rtl] .text-pages ul li {
+  padding-right: 35px;
+}
+html[dir=ltr] .text-pages ul li {
+  padding-left: 35px;
+}
+.text-pages ul li::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: #4F4E51;
+}
+html[dir=rtl] .text-pages ul li::after {
+  right: 10px;
+  left: unset;
+}
+html[dir=ltr] .text-pages ul li::after {
+  right: unset;
+  left: 10px;
+}
+
 @media only screen and (min-width: 991px) and (min-width: 991px) {
   html[dir=rtl] header .navbar:hover .accordion-button {
     border-left: unset;
   }
 }
 html[dir=rtl] .button img {
-  backface-visibility: visible;
-  transform: perspective(140px) rotateY(180deg);
-}
-html[dir=rtl] .icon-mobile {
   backface-visibility: visible;
   transform: perspective(140px) rotateY(180deg);
 }
@@ -4074,6 +4128,16 @@ html[dir=rtl] .home-main-slider .content-slider .button span span {
   font-family: "GE-SS-Two-Light";
   font-weight: 400;
 }
+html[dir=rtl] .home-main-slider .swiper-button-next,
+html[dir=rtl] .home-main-slider .swiper-rtl .swiper-button-prev {
+  left: var(--swiper-navigation-sides-offset, 0px);
+  right: unset;
+}
+html[dir=rtl] .home-main-slider .swiper-button-prev,
+html[dir=rtl] .home-main-slider .swiper-rtl .swiper-button-next {
+  right: var(--swiper-navigation-sides-offset, 0px);
+  left: unset;
+}
 html[dir=rtl] .second-section .counter .counting {
   font-family: "GE-SS-Two-Bold";
 }
@@ -4081,6 +4145,15 @@ html[dir=rtl] .second-section .counter p {
   font-family: "GE-SS-Two-Bold";
 }
 html[dir=rtl] .second-section h5 {
+  font-family: "GE-SS-Two-Bold";
+}
+html[dir=rtl] .text-pages h3 {
+  font-family: "GE-SS-Two-Bold";
+}
+html[dir=rtl] .text-pages h4 {
+  font-family: "GE-SS-Two-Bold";
+}
+html[dir=rtl] .text-pages p span {
   font-family: "GE-SS-Two-Bold";
 }
 html[dir=rtl] .details-section .first-details-description p span {
@@ -4313,4 +4386,10 @@ html[dir=rtl] .not-found .error-message {
 }
 html[dir=rtl] .sucess-partner h2 {
   font-family: "GE-SS-Two-Bold";
+}
+
+@media (max-width: 991px) {
+  .desktop-only {
+    display: none !important;
+  }
 }/*# sourceMappingURL=general.css.map */

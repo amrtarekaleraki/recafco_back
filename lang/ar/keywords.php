@@ -84,6 +84,7 @@ return [
     'add_new_product'  => 'اضافه منتج جديد',
     'show_product'     => 'مشاهده المنتج',
     'edit_product'     => 'تعديل المنتج',
+    'slider_product'   => 'صور المنتج',
 
     // contacts module
     'contacts'         => 'التواصل',
@@ -156,4 +157,5 @@ return [
     'profile' => 'الملف الشخصي',
     'submit' => 'إرسال',
     'add_new' => 'إضافة جديد',
+    'download' => 'تحميل',
 ];

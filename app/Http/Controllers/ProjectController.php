@@ -73,11 +73,18 @@ class ProjectController extends Controller
         }
 
         if ($request->hasFile('slider_image')) {
-            $slider = $request->file('slider_image');
-            $newImageName = time() . '-' . $slider->getClientOriginalName();
-            $slider->storeAs('project_slider', $newImageName, 'public');
-            $data['slider_image'] = $newImageName;
+            $images = $request->file('slider_image');
+            $imageNames = [];
+
+            foreach ($images as $image) {
+                $newImageName = time() . '-' . $image->getClientOriginalName();
+                $image->storeAs('project_slider', $newImageName, 'public');
+                $imageNames[] = $newImageName;
+            }
+
+            $data['slider_image'] = json_encode($imageNames);
         }
+
 
 
         Project::create($data);
@@ -155,16 +162,31 @@ class ProjectController extends Controller
             $data['image2'] = $newImageName;
         }
 
+
+
+        // Handle multiple image update
         if ($request->hasFile('slider_image')) {
-            // Delete old slider image if exists
-            if ($project->slider_image) {
-                Storage::delete("public/project_slider/$project->slider_image");
+        $images = $request->file('slider_image');
+        $imageNames = [];
+
+        // Delete existing images if necessary (if you want to replace them)
+        if ($project->slider_image) {
+            $existingImages = json_decode($project->slider_image, true);
+            foreach ($existingImages as $existingImage) {
+                Storage::delete("public/project_slider/$existingImage");
             }
-            $slider = $request->file('slider_image');
-            $newImageName = time() . '-' . $slider->getClientOriginalName();
-            $slider->storeAs('project_slider', $newImageName, 'public');
-            $data['slider_image'] = $newImageName;
         }
+
+        // Process and store new images
+        foreach ($images as $image) {
+            $newImageName = time() . '-' . $image->getClientOriginalName();
+            $image->storeAs('project_slider', $newImageName, 'public');
+            $imageNames[] = $newImageName;
+        }
+
+        // Save the images as a JSON array in the 'slider_image' column
+        $data['slider_image'] = json_encode($imageNames);
+    }
 
         $project->update($data);
 
@@ -178,7 +200,14 @@ class ProjectController extends Controller
     {
         Storage::delete("public/project_image1/$project->image");
         Storage::delete("public/project_image2/$project->image2");
-        Storage::delete("public/project_slider/$project->slider_image");
+
+        if ($project->slider_image) {
+            $sliderImages = json_decode($project->slider_image, true);
+            foreach ($sliderImages as $sliderImage) {
+                Storage::delete("public/project_slider/$sliderImage");
+            }
+        }
+
         $project->delete();
         return to_route('admin.projects.index')->with('success', __('keywords.deleted_successfully'));
     }

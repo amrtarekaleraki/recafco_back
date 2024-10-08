@@ -37,7 +37,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
                                       <x-form-label field="description_en"></x-form-label>
-                                      <textarea name="description" class="form-control" placeholder="{{ __('keywords.description') }}"> {{ $product->getTranslation('description','en') }} </textarea>
+                                      <textarea id="description" name="description" class="form-control" style="display:none;">{{ $product->getTranslation('description','en') }}</textarea>
+                                      <textarea  name="description" class="form-control" placeholder="{{ __('keywords.description') }}"> {{ $product->getTranslation('description','en') }} </textarea>
                                       <x-validation-error field="description"></x-validation-error>
                                     </div>
                                 </div>
@@ -65,6 +66,16 @@
                                         <x-validation-error field="image"></x-validation-error>
                                     </div>
                                 </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <x-form-label field="slider_product"></x-form-label>
+                                      <input type="file" name="slider_product[]" class="form-control" multiple>
+                                      <x-validation-error field="slider_product"></x-validation-error>
+                                    </div>
+                                </div>
+
 
 
 

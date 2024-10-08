@@ -10,10 +10,10 @@
 
 @section('slider')
 
-    <section class="hero-section position-relative d-flex flex-column align-items-center justify-content-center"
+    <section data-aos="zoom-out-up" class="hero-section position-relative d-flex flex-column align-items-center justify-content-center"
     style="background: url({{asset('assets-front')}}/images/global-image/construction-hero-section.PNG);">
     <div class="container">
-        <div class="text-box" data-aos="fade-up">
+        <div class="text-box">
             <span class="d-block mb-2">
                 {{ __('front.construction_title') }}
             </span>

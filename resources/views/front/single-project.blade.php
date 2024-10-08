@@ -1,5 +1,6 @@
 @php
     $socials = App\Models\Social::first();
+    $images = json_decode($project->slider_image,true);
 @endphp
 
 
@@ -107,25 +108,18 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slide -->
-                        <div class="swiper-slide">
-                            <div class="swiper-image">
-                                <div class="image" style="background: url({{ asset("storage/project_image1/$project->image") }});"></div>
-                            </div>
-                        </div>
-                        <!-- Slide -->
-                        <div class="swiper-slide">
-                            <div class="swiper-image">
-                                <div class="image" style="background: url({{ asset("storage/project_image2/$project->image2") }});"></div>
-                            </div>
-                        </div>
-                        <!-- Slide -->
-                        <div class="swiper-slide">
-                            <div class="swiper-image">
-                                <div class="image" style="background: url({{ asset("storage/project_slider/$project->slider_image") }});"></div>
-                            </div>
-                        </div>
+                        @if(is_array($images) && count($images) > 0)
+                            @foreach($images as $image)
+                                <div class="swiper-slide">
+                                    <div class="swiper-image">
+                                        <div class="image" style="background: url({{ asset('storage/project_slider/' . $image) }});"></div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
 
                     </div>
+                    <div class="swiper-pagination position-relative"></div>
                     <div class="swiper-button-prev project-value-arrow">
                         <img src="{{asset('assets-front')}}/images/icon/arrow-left.svg" alt="icon"/>
                     </div>
@@ -229,8 +223,9 @@
 
     @include('front.partials.dark-footer')
 
-
 @endsection
+
+
 
 
 

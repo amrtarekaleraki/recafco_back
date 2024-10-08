@@ -86,6 +86,7 @@ return [
     'add_new_product'  => 'Add New Product',
     'show_product'     => 'Show Product',
     'edit_product'     => 'Edit Product',
+    'slider_product'   => 'Product Slider',
 
     // contacts module
     'contacts'         => 'contacts',
@@ -160,4 +161,5 @@ return [
     'profile' => 'Profile',
     'submit' => 'Submit',
     'add_new' => 'Add New',
+    'download' => 'Download',
 ];

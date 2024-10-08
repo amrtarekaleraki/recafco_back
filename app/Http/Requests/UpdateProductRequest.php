@@ -28,6 +28,8 @@ class UpdateProductRequest extends FormRequest
             'description_ar'    => 'required|string',
             'pdf'       => 'nullable|mimes:pdf',
             'image'       => 'nullable|mimes:jpg,png,svg',
+            'slider_product'     => 'nullable',
+            'slider_product.*'     => 'mimes:jpg,png,svg',
         ];
     }
 
@@ -40,6 +42,7 @@ class UpdateProductRequest extends FormRequest
             'description_ar' => __("keywords.description_ar"),
             'pdf'       => __("keywords.pdf"),
             'image'       => __("keywords.image"),
+            'slider_product'       => __("keywords.slider_product"),
         ];
     }
 }

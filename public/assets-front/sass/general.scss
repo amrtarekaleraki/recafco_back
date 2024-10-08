@@ -815,7 +815,7 @@ img.search {
     .content-slider {
         @include position(absolute, unset, 0, 0, unset);
         z-index: 9999;
-        padding: 80px 0px 30px 0px;
+        padding: 80px 1.5rem 30px 1.5rem;
         width: 100%;
         background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 74%, rgba(0, 0, 0, 0.7) 100%);
         background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 74%, rgba(0, 0, 0, 0.7) 100%);
@@ -3282,7 +3282,48 @@ footer {
         padding: 1rem;
     }
 }
-
+.text-pages{
+    padding: 3rem 0;
+    h3{
+        color: #4F4E51;
+        font-size: 2rem;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        font-family: $font-family-bold;
+    }
+    h4{
+        font-size: 1.4rem;
+        color: #4F4E51;
+        text-transform: uppercase;
+        margin: 2rem 0 0 0;
+        font-family: $font-family-bold;
+    }
+    p{
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+        font-size: 1.25rem;
+        color: #4F4E51;
+        span{
+            font-family: $font-family-bold;
+        }
+    }
+    ul{
+        margin-top: 2rem;
+        li{
+            @include property_dir('padding', 'right', 35px);
+            position: relative;
+            &::after{
+                content: '';
+                @include position( absolute , 8px, 10px, 0, unset);
+                width: 8px;
+                height: 8px;
+                border-radius: 100%;
+                background: #4F4E51;
+            }
+        }
+    }
+}
 html[dir="rtl"] {
     @media only screen and (min-width: 991px) and (min-width: 991px) {
         header .navbar:hover .accordion-button {
@@ -3297,10 +3338,7 @@ html[dir="rtl"] {
         }
     }
 
-    .icon-mobile {
-        backface-visibility: visible;
-        transform: perspective(140px) rotateY(180deg);
-    }
+   
 
     header .accordion-button {
         border-right: 0.105rem solid #fff;
@@ -3452,6 +3490,17 @@ html[dir=rtl] {
             }
         }
     }
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+        left: var(--swiper-navigation-sides-offset, 0px);
+        right: unset;
+    }
+
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+        right: var(--swiper-navigation-sides-offset, 0px);
+        left: unset;
+    }
 }
 /*===second-section===*/
 .second-section {
@@ -3468,7 +3517,19 @@ html[dir=rtl] {
         font-family: 'GE-SS-Two-Bold';
     }
 }
-
+.text-pages{
+    h3{
+        font-family: 'GE-SS-Two-Bold';
+    }
+    h4{
+        font-family: 'GE-SS-Two-Bold';
+    }
+    p{
+        span{
+            font-family: 'GE-SS-Two-Bold';
+        }
+    }
+}
 /*===details-section===*/
 .details-section {
     .first-details-description {
@@ -3902,4 +3963,9 @@ footer {
         font-family: 'GE-SS-Two-Bold';
     }
 }
+}
+@media (max-width: 991px){
+    .desktop-only{
+        display: none !important;
+    }
 }

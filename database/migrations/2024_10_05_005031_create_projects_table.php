@@ -23,7 +23,7 @@ return new class extends Migration
             $table->json('subtitle');
             $table->json('description');
             $table->text('image2');
-            $table->text('slider_image');
+            $table->json('slider_image');
             $table->enum('featured', ['active', 'inactive'])->default('inactive');
 
 

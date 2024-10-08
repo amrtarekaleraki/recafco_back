@@ -36,7 +36,8 @@ class UpdateProjectRequest extends FormRequest
             'description_ar'    => 'required|string',
             'image'       => 'nullable|mimes:jpg,png,svg',
             'image2'       => 'nullable|mimes:jpg,png,svg',
-            'slider_image'       => 'nullable|mimes:jpg,png,svg',
+            'slider_image'     => 'nullable',
+            'slider_image.*'     => 'mimes:jpg,png,svg',
             'value'    => 'required|string',
             'featured' => 'required|in:active,inactive',
         ];

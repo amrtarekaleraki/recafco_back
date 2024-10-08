@@ -28,6 +28,8 @@ class StoreProductRequest extends FormRequest
             'description_ar'    => 'required|string',
             'pdf'       => 'required|mimes:pdf',
             'image'       => 'required|mimes:jpg,png,svg',
+            'slider_product'     => 'required',
+            'slider_product.*'     => 'mimes:jpg,png,svg',
         ];
     }
 
@@ -40,6 +42,7 @@ class StoreProductRequest extends FormRequest
             'description_ar' => __("keywords.description_ar"),
             'pdf'       => __("keywords.pdf"),
             'image'       => __("keywords.image"),
+            'slider_product'       => __("keywords.slider_product"),
         ];
     }
 }

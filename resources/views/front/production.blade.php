@@ -14,10 +14,10 @@
 
 @section('slider')
 
-        <section class="hero-section position-relative d-flex flex-column align-items-center justify-content-center"
+        <section data-aos="zoom-out-up" class="hero-section position-relative d-flex flex-column align-items-center justify-content-center"
         style="background: url({{asset('assets-front')}}/images/global-image/proguction-hero.PNG);">
         <div class="container">
-            <div class="text-box" data-aos="fade-up">
+            <div class="text-box">
                 <span class="d-block mb-2">
                     {{ __('front.production_title') }}
                 </span>
@@ -53,7 +53,7 @@
                         </div>
 
                         @foreach($products as $product)
-                            <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="overview-item">
                                     <div class="body-part d-flex align-items-center justify-content-center h-100">
                                         <img class="w-100 img-fluid" src="{{ asset("storage/products_images/$product->image") }}" alt="image" />
@@ -83,9 +83,23 @@
                                     <p class="mb-3">
                                         {{ $product->description }}
                                     </p>
-                                    <a href="{{ asset("storage/products_pdf/$product->pdf") }}" class="button button--primary bg-red hover-add-swipe" download="{{ $product->pdf }}">
-                                        {{ __('front.production_download') }} {{ $product->title }}  {{ __('front.production_catalog') }}
+                                    @if ($product->id == 1)
+                                    <a href="{{ route('front.hollowcore',$product) }}" class="button button--primary bg-red hover-add-swipe">
+                                        {{ __('front.construction_learn_more') }}
                                     </a>
+                                    @elseif ($product->id == 4)
+                                        <a href="{{ route('front.precast',$product) }}" class="button button--primary bg-red hover-add-swipe">
+                                            {{ __('front.construction_learn_more') }}
+                                        </a>
+                                    @elseif ($product->id == 5)
+                                        <a href="{{ route('front.gfrc',$product) }}" class="button button--primary bg-red hover-add-swipe">
+                                            {{ __('front.construction_learn_more') }}
+                                        </a>
+                                    @elseif ($product->id == 6)
+                                        <a href="{{ route('front.patching_plant',$product) }}" class="button button--primary bg-red hover-add-swipe">
+                                            {{ __('front.construction_learn_more') }}
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
 
@@ -99,6 +113,8 @@
                             </div>
                         </div>
                     @endforeach
+
+
 
 
                 </div>
