@@ -10,7 +10,7 @@
 
 
       <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
-         <img src="{{asset('assets-admin')}}/assets/logo/2.png" alt="" style="width: 100%;">
+         <img src="{{asset('assets-admin')}}/assets/logo/2.PNG" alt="" style="width: 100%;">
       </a>
       <br>
       <h1 class="h1 mb-3">{{ __('keywords.sign_in') }}</h1>

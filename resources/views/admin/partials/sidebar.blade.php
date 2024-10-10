@@ -6,7 +6,7 @@
       <!-- nav bar -->
       <div class="w-100 mb-4 d-flex">
         <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="{{ route('admin.index') }}">
-             <img src="{{asset('assets-admin')}}/assets/logo/2.png" alt="" style="width: 100%;">
+             <img src="{{asset('assets-admin')}}/assets/logo/2.PNG" alt="" style="width: 100%;">
         </a>
       </div>
 
