@@ -25,21 +25,19 @@ class ContactController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreContactRequest $request)
-    {
-        $data = $request->validated();
 
-        Contact::create($data);
+    // public function store(StoreContactRequest $request)
+    // {
+    //     $data = $request->validated();
 
-        return to_route('front.contacts')->with('success', __('keywords.contact_successfully'));
-    }
+    //     Contact::create($data);
 
-    /**
-     * Display the specified resource.
-     */
+    //     dd($data);
+
+    //     return to_route('front.contacts')->with('success', __('keywords.contact_successfully'));
+    // }
+
+
     public function show(Contact $contact)
     {
         return view('admin.contacts.show',get_defined_vars());

@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Counter;
 use App\Models\Product;
 use App\Models\Project;
 use App\Models\Category;
 use App\Models\Partener;
 use App\Models\Certificate;
+use App\Models\Information;
 use Illuminate\Http\Request;
 use App\Models\Accreditation;
-use App\Models\Information;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use App\Http\Requests\StoreContactRequest;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class FrontController extends Controller
@@ -141,5 +143,14 @@ class FrontController extends Controller
         return view('front.gfrc',get_defined_vars());
     }
 
+
+    public function storecontact(StoreContactRequest $request)
+    {
+        $data = $request->validated();
+
+        Contact::create($data);
+
+        return to_route('front.contacts')->with('success', __('keywords.contact_successfully'));
+    }
 
 }

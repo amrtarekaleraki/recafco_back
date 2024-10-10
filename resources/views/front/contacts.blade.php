@@ -78,7 +78,7 @@
                 {{-- start form --}}
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                     <x-success-alert></x-success-alert>
-                    <form id="yourFormId" action="{{ route('admin.contacts.store') }}" method="POST">
+                    <form id="yourFormId" action="{{ route('front.storecontact') }}" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6 col-md-12">

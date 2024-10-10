@@ -29,6 +29,7 @@ Route::group([
         Route::get('/construction', 'construction')->name('construction');
         Route::get('/projects', 'projects')->name('projects');
         Route::get('/contacts', 'contacts')->name('contacts');
+        Route::post('/storecontact', 'storecontact')->name('storecontact');
         Route::get('/not-found', 'notfound')->name('notfound');
         Route::get('/notfoundPage', 'notfoundPage')->name('notfoundpage');
         // Route::get('/single-project', 'singleproject')->name('singleproject');
