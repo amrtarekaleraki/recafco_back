@@ -18,6 +18,8 @@
                     <div class="card-body">
 
                         <x-success-alert></x-success-alert>
+                        
+                        <x-error-alert></x-error-alert>
 
                         <table class="table table-hover">
                             <thead>

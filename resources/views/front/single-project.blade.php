@@ -79,7 +79,7 @@
                          {!! $project->description !!}
                     </p>
                     <a href="{{ route('front.projects') }}" class="button button--primary bg-red hover-add-swipe">
-                        all projects
+                        {{ __('keywords.all_projects') }}
                     </a>
                 </div>
                 <div class="row align-items-center justify-content-end">
@@ -101,7 +101,7 @@
                     </div>
                     <span>M</span>
                 </div>
-                <p>Project Value</p>
+                <p>{{ __('keywords.Project_Value') }}</p>
             </div>
             <div class="swiper-part">
                 <div class="swiper project-value">
@@ -134,12 +134,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-12 col-sm-12">
-                        <h5 class="title">RELATED PROJECTS</h5>
+                        <h5 class="title">{{ __('keywords.related') }}</h5>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 position-relative">
                         <div class="d-flex flex-wrap align-items-center justify-content-between row-gap-3">
                             <a href="{{ route('front.projects') }}" class="button button--primary bg-red hover-add-swipe">
-                                all projects
+                                {{ __('keywords.all_projects') }}
                             </a>
                             <div class="arrow">
                                 <div class="swiper-button-next position-relative arrow-related-proj">
@@ -190,18 +190,18 @@
     <!---->
     <section class="build-together position-relative">
         <div class="mobile-upper-text align-items-center justify-content-center flex-column row-gap-3">
-            <h4>let’s build <span class="d-block">together</span></h4>
+            <h4>{{ __('front.lets_build') }} <span class="d-block">{{ __('front.together') }}</span></h4>
             <a href="help.html" class="button button--primary bg-red hover-add-swipe">
-                view career openings
+                {{ __('front.career_openings') }}
             </a>
         </div>
         <div class="flex-reverse p-0">
             <div
                 class="build-together-absolute-box d-flex align-items-center justify-content-center flex-column row-gap-3">
-                <span>let’s talk</span>
-                <h4>need to reach us?</h4>
+                <span>{{ __('front.lets_talk') }}</span>
+                <h4>{{ __('front.need_to_reach_us') }}</h4>
                 <a href="{{ route('front.contacts') }}" class="button button--primary bg-red hover-add-swipe">
-                    Contact us
+                    {{ __('front.contact') }}
                 </a>
             </div>
             <div class="row">
@@ -209,9 +209,9 @@
                     <div class="build-together-image-part position-relative d-flex align-items-center"
                         style="background: url({{asset('assets-front')}}/images/production/contact.PNG);">
                         <div class="text-image">
-                            <h4>let’s build <span class="d-block">together</span></h4>
+                            <h4>{{ __('front.lets_build') }} <span class="d-block">{{ __('front.together') }}</span></h4>
                             <a href="{{ $socials->career_open }}" class="button button--primary bg-red hover-add-swipe">
-                                view career openings
+                                {{ __('front.career_openings') }}
                             </a>
                         </div>
                     </div>

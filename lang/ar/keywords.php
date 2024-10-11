@@ -61,6 +61,8 @@ return [
 
     // socials module
     'socials'  => 'السوشيال',
+    'show_social' => 'عرض وسائل التواصل الاجتماعي',
+     'edit_social' => 'تعديل وسائل التواصل الاجتماعي',
     'factory_location_en'    => 'عنوان المصنع بالانجليزيه',
     'factory_location_ar' => 'عنوان المصنع بالعربيه',
     'factory_phone'        => 'هاتف المصنع',
@@ -136,6 +138,13 @@ return [
     'image_home' => 'صوره الخلفية',
 
 
+    // jobs module
+    'link'         => 'رابط',
+    'jobs'         => 'وظائف',
+    'edit_job'     => 'تعديل الوظيفة',
+    'add_new_job'  => 'إضافة وظيفة جديدة',
+
+
 
     // common translations
     'old_password_error'              => 'الباسورد القديم خطأ',
@@ -158,4 +167,8 @@ return [
     'submit' => 'إرسال',
     'add_new' => 'إضافة جديد',
     'download' => 'تحميل',
+    'related' => 'المشاريع ذات الصلة',
+    'all_projects' => 'جميع المشاريع',
+    'Project_Value' => 'قيمة المشروع',
+    'error_occurred' => 'حدث خطأ',
 ];

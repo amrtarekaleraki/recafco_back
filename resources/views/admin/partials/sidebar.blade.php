@@ -70,6 +70,10 @@
         <x-sidebar-tab href="{{ route('admin.projects.index') }}" icon="fe-package" name="{{ __('keywords.projects') }}"></x-sidebar-tab>
 
 
+        {{-- jobs --}}
+        <x-sidebar-tab href="{{ route('admin.jobs.index') }}" icon="fe-codesandbox" name="{{ __('keywords.jobs') }}"></x-sidebar-tab>
+
+
         </ul>
 
 

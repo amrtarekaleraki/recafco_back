@@ -21,7 +21,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
                                       <x-form-label field="factory_location_en"></x-form-label>
-                                      <input type="text" name="factory_location" class="form-control" value="{{ $social->getTranslation('factory_location','en') }}">
+                                      {{-- <input type="text" name="factory_location" class="form-control" value="{{ $social->getTranslation('factory_location','en') }}"> --}}
+                                      <textarea name="factory_location" class="form-control">{{ $social->getTranslation('factory_location','en') }}</textarea>
                                       <x-validation-error field="factory_location"></x-validation-error>
                                     </div>
                                   </div>
@@ -29,7 +30,8 @@
                                   <div class="col-md-6">
                                       <div class="form-group mb-3">
                                         <x-form-label field="factory_location_ar"></x-form-label>
-                                        <input type="text" name="factory_location_ar" class="form-control" value="{{ $social->getTranslation('factory_location','ar') }}">
+                                        {{-- <input type="text" name="factory_location_ar" class="form-control" value="{{ $social->getTranslation('factory_location','ar') }}"> --}}
+                                        <textarea name="factory_location_ar" class="form-control">{{ $social->getTranslation('factory_location','en') }}</textarea>
                                         <x-validation-error field="factory_location_ar"></x-validation-error>
                                       </div>
                                   </div>
@@ -101,7 +103,8 @@
                                       </div>
                                   </div>
 
-                                  <div class="col-md-6">
+
+                                  <div class="col-md-6" style="display: none;">
                                       <div class="form-group mb-3">
                                         <x-form-label field="career_open"></x-form-label>
                                         <input type="text" name="career_open" class="form-control" value="{{ $social->career_open }}">

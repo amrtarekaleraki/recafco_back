@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Project;
 use App\Models\Category;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
@@ -35,6 +36,11 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
+
+    DB::beginTransaction();
+
+    try {
+
         $data = $request->validated();
 
         $data['title'] = [
@@ -60,14 +66,14 @@ class ProjectController extends Controller
 
         if ($request->hasFile('image')) {
             $image1 = $request->file('image');
-            $newImageName = time() . '-' . $image1->getClientOriginalName();
+            $newImageName = uniqid() . '-' . $image1->getClientOriginalName();
             $image1->storeAs('project_image1', $newImageName, 'public');
             $data['image'] = $newImageName;
         }
 
         if ($request->hasFile('image2')) {
             $image2 = $request->file('image2');
-            $newImageName = time() . '-' . $image2->getClientOriginalName();
+            $newImageName = uniqid() . '-' . $image2->getClientOriginalName();
             $image2->storeAs('project_image2', $newImageName, 'public');
             $data['image2'] = $newImageName;
         }
@@ -77,7 +83,7 @@ class ProjectController extends Controller
             $imageNames = [];
 
             foreach ($images as $image) {
-                $newImageName = time() . '-' . $image->getClientOriginalName();
+                $newImageName = uniqid() . '-' . $image->getClientOriginalName();
                 $image->storeAs('project_slider', $newImageName, 'public');
                 $imageNames[] = $newImageName;
             }
@@ -89,8 +95,18 @@ class ProjectController extends Controller
 
         Project::create($data);
 
+        // Commit the transaction
+        DB::commit();
+
         return to_route('admin.projects.index')->with('success', __('keywords.created_successfully'));
+    } catch (\Exception $e) {
+        // Rollback the transaction in case of an error
+        DB::rollback();
+
+        // Return with an error message
+        return to_route('admin.projects.index')->with('error', __('keywords.error_occurred'));
     }
+}
 
     /**
      * Display the specified resource.
@@ -117,6 +133,11 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
+
+    DB::beginTransaction();
+
+    try {
+
         $data = $request->validated();
 
         $data['title'] = [
@@ -146,7 +167,7 @@ class ProjectController extends Controller
                 Storage::delete("public/project_image1/$project->image");
             }
             $image1 = $request->file('image');
-            $newImageName = time() . '-' . $image1->getClientOriginalName();
+            $newImageName = uniqid() . '-' . $image1->getClientOriginalName();
             $image1->storeAs('project_image1', $newImageName, 'public');
             $data['image'] = $newImageName;
         }
@@ -157,7 +178,7 @@ class ProjectController extends Controller
                 Storage::delete("public/project_image2/$project->image2");
             }
             $image2 = $request->file('image2');
-            $newImageName = time() . '-' . $image2->getClientOriginalName();
+            $newImageName = uniqid() . '-' . $image2->getClientOriginalName();
             $image2->storeAs('project_image2', $newImageName, 'public');
             $data['image2'] = $newImageName;
         }
@@ -179,7 +200,7 @@ class ProjectController extends Controller
 
         // Process and store new images
         foreach ($images as $image) {
-            $newImageName = time() . '-' . $image->getClientOriginalName();
+            $newImageName = uniqid() . '-' . $image->getClientOriginalName();
             $image->storeAs('project_slider', $newImageName, 'public');
             $imageNames[] = $newImageName;
         }
@@ -190,25 +211,61 @@ class ProjectController extends Controller
 
         $project->update($data);
 
+        DB::commit();
+
         return to_route('admin.projects.index')->with('success', __('keywords.updated_successfully'));
+    } catch (\Exception $e) {
+        // Rollback the transaction in case of an error
+        DB::rollback();
+
+        // Return with an error message
+        return to_route('admin.projects.index')->with('error', __('keywords.error_occurred'));
     }
+}
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Project $project)
     {
-        Storage::delete("public/project_image1/$project->image");
-        Storage::delete("public/project_image2/$project->image2");
+        // Start a transaction to ensure atomicity
+        DB::beginTransaction();
 
-        if ($project->slider_image) {
-            $sliderImages = json_decode($project->slider_image, true);
-            foreach ($sliderImages as $sliderImage) {
-                Storage::delete("public/project_slider/$sliderImage");
+        try {
+            // Delete main image if it exists
+            if ($project->image) {
+                Storage::delete("public/project_image1/{$project->image}");
             }
-        }
 
-        $project->delete();
-        return to_route('admin.projects.index')->with('success', __('keywords.deleted_successfully'));
+            // Delete secondary image if it exists
+            if ($project->image2) {
+                Storage::delete("public/project_image2/{$project->image2}");
+            }
+
+            // Delete slider images (multiple files) if they exist
+            if ($project->slider_image) {
+                $sliderImages = json_decode($project->slider_image, true);
+                foreach ($sliderImages as $sliderImage) {
+                    Storage::delete("public/project_slider/{$sliderImage}");
+                }
+            }
+
+            // Delete the project record from the database
+            $project->delete();
+
+            // Commit the transaction
+            DB::commit();
+
+            return to_route('admin.projects.index')->with('success', __('keywords.deleted_successfully'));
+        } catch (\Exception $e) {
+            // Rollback the transaction in case of an error
+            DB::rollback();
+
+            // Return with an error message
+            return to_route('admin.projects.index')->with('error', __('keywords.error_occurred'));
+        }
     }
+
+
+
 }

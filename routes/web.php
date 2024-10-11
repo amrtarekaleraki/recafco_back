@@ -9,6 +9,7 @@ use App\Http\Controllers\CounterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\InformationController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\PartenerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -23,6 +24,7 @@ Route::group([
     'as' => 'front.',
 ], function () {
     Route::controller(FrontController::class)->group(function () {
+        Route::get('switch-language/{lang}', 'switchLanguage')->name('switch');
         Route::get('/', 'index')->name('index');
         Route::get('/about', 'about')->name('about');
         Route::get('/production', 'production')->name('production');
@@ -33,7 +35,6 @@ Route::group([
         Route::get('/not-found', 'notfound')->name('notfound');
         Route::get('/notfoundPage', 'notfoundPage')->name('notfoundpage');
         // Route::get('/single-project', 'singleproject')->name('singleproject');
-        Route::get('switch-language/{lang}', 'switchLanguage')->name('switch');
         Route::get('projects/{project}', 'SingleProject')->name('singleproject');
         Route::get('/search','search')->name('search');
         // single product pages
@@ -41,7 +42,7 @@ Route::group([
         Route::get('/hollowcore/{product}', 'hollowcore')->name('hollowcore');
         Route::get('/gfrc/{product}', 'gfrc')->name('gfrc');
         Route::get('/patching_plant/{product}', 'patching_plant')->name('patching_plant');
-
+        Route::get('/jobs', 'jobs')->name('jobs');
 
     });
 });
@@ -114,6 +115,11 @@ Route::name('admin.')->prefix('admin')->group(function(){
             Route::resource('projects',ProjectController::class);
         });
 
+        // jobs
+        Route::controller(JobController::class)->group(function(){
+            Route::resource('jobs',JobController::class);
+        });
+
 
         });
 
@@ -121,6 +127,12 @@ Route::name('admin.')->prefix('admin')->group(function(){
 
 
 });
+
+
+    // 404 error page
+    Route::get('{any?}', function () {
+        return view('front.error');
+    })->where('any', '.*')->name('error');
 
 
 

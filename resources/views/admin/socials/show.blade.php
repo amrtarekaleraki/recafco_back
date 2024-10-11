@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6" style="display: none;">
                                     <div class="form-group mb-3">
                                       <x-form-label field="career_open"></x-form-label>
                                       <p class="form-control">{{ $social->career_open }}</p>

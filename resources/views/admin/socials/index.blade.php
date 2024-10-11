@@ -25,7 +25,7 @@
                                     <th width="5%">#</th>
                                     <th>{{ __('keywords.email') }}</th>
                                     <th>{{ __('keywords.comercial_no') }}</th>
-                                    <th>{{ __('keywords.career_open') }}</th>
+                                    {{-- <th>{{ __('keywords.career_open') }}</th> --}}
                                     <th width="15%">{{ __('keywords.actions') }}</th>
                                 </tr>
                             </thead>
@@ -36,7 +36,7 @@
                                             <td>{{ $socials->firstItem() + $loop->index }}</td>
                                             <td>{{ $social->email }}</td>
                                             <td>{{ $social->comercial_no }}</td>
-                                            <td>{{ $social->career_open }}</td>
+                                            {{-- <td>{{ $social->career_open }}</td> --}}
                                             <td>
                                                 <x-action-button
                                                     href="{{ route('admin.socials.edit', ['social' => $social]) }}"

@@ -32,7 +32,7 @@
         @if($results->isNotEmpty())
             <ul class="nav nav-tabs border-0 d-flex align-items-center justify-content-center flex-wrap">
                 <li>
-                    <button class="btn btn-filter-taps active" id="all">Search Results for "{{ $query }}":</button>
+                    <button class="btn btn-filter-taps active" id="all"> {{ __('front.search_result') }} "{{ $query }}":</button>
                 </li>
             </ul>
 
@@ -56,7 +56,7 @@
             @else
                 <section class="not-found">
                     <div class="container">
-                        <p>Sorry, no results found for "{{ $query }}".</p>
+                        <p> {{ __('front.no_results') }} "{{ $query }}".</p>
                     </div>
                 </section>
             @endif

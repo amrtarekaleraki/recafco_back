@@ -62,6 +62,8 @@ return [
 
     // socials module
     'socials'  => 'socials',
+    'show_social'     => 'Show social',
+    'edit_social'     => 'Edit social',
     'factory_location_en'    => 'factory location en',
     'factory_location_ar' => 'factory location ar',
     'factory_phone'        => 'factory phone',
@@ -141,6 +143,14 @@ return [
     'image_home' => 'Background Home Image',
 
 
+    // jobs module
+    'link'         => 'link',
+    'jobs'         => 'jobs',
+    'edit_job'     => 'Edit job',
+    'add_new_job'  => 'Add New job',
+
+
+
     // common translations
     'old_password_error'              => 'old password don`t match our records',
     'profile'              => 'Profile',
@@ -162,4 +172,9 @@ return [
     'submit' => 'Submit',
     'add_new' => 'Add New',
     'download' => 'Download',
+    'related' => 'RELATED PROJECTS',
+    'all_projects' => 'All Projects',
+    'Project_Value' => 'Project Value',
+    'error_occurred' => 'error occurred'
+
 ];

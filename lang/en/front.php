@@ -206,6 +206,15 @@ return [
     'plant_lab_desc' => 'It is equipped with 3 cube crushing machines, an oven, weighing balances, sieves, concrete workability measuring equipment, chemical analysis apparatus, etc. to perform different types of quality control tests.',
 
 
+    //jobs
+    'jobs_title' => 'carrer openings',
+    'jobs_subtitle' => 'Let’s Build Together',
+    'jobs_desc' => 'career openings',
+    'jobs_message_header' => 'Join our Team',
+    'jobs_overview' => 'Join our team',
+    'jobs_description' => 'At RECAFCO, we aim to recruit high-caliber individuals with strong educational and professional backgrounds. Our employees enjoy a friendly work environment and management support to develop their skills for mutual long-term growth. We believe that the joy of challenge and achievement enhances the quality of results. If our areas of activities cover your skills or area of expertise, please apply below to become a member of RECAFCO:',
+    'jobs_apply' => 'Apply Now',
+
 
     // common
     'for_sales_inquiries' => 'For Sales Inquiries',
@@ -225,5 +234,9 @@ return [
     'need_to_reach_us' => 'need to reach us?',
     'search_icon'  => 'Search...',
     'copyright_dark' => 'Copyright 2024 © RECAFCO all rights reserved',
+    'notfound' => 'Not Found',
+    'notfound_msg' => 'We couldn`t find this page.',
+    'search_result' => 'Search Results for',
+    'no_results' => 'Sorry, no results found for',
 
 ];

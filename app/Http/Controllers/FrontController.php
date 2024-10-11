@@ -153,4 +153,10 @@ class FrontController extends Controller
         return to_route('front.contacts')->with('success', __('keywords.contact_successfully'));
     }
 
+
+    public function jobs()
+    {
+        return view('front.jobs',get_defined_vars());
+    }
+
 }
