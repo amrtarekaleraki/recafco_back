@@ -59,7 +59,7 @@
 
 @section('content')
 
-        <section class="production-page">
+        <section class="bg-white">
             <div class="overview padding-section">
                 <div class="container">
                     <div class="row mb-4">
@@ -75,7 +75,7 @@
                                 <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center mb-5">
                                     <div class="overview-item">
                                         <div class="footer-part job_title">
-                                            <p>{{ $job->title }}</p>
+                                            <p style="text-transform:capitalize;">{{ $job->title }}</p>
                                         </div>
 
                                         <div class="footer__top d-flex align-items-center flex-wrap gap-5 row-gap-3">
