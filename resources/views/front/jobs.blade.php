@@ -70,22 +70,24 @@
                             </p>
                         </div>
 
-                        @foreach($jobs as $job)
-                            <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center mb-5">
-                                <div class="overview-item">
-                                    <div class="footer-part job_title">
-                                        <p>{{ $job->title }}</p>
-                                    </div>
+                        @if (count($jobs) > 0)
+                            @foreach($jobs as $job)
+                                <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center mb-5">
+                                    <div class="overview-item">
+                                        <div class="footer-part job_title">
+                                            <p>{{ $job->title }}</p>
+                                        </div>
 
-                                    <div class="footer__top d-flex align-items-center flex-wrap gap-5 row-gap-3">
-                                        <a href="{{ url($job->link) }}" target="_blank" class="button button--link hover-add-underline d-flex align-items-center gap-3 job_link">
-                                            <span>{{ __('front.jobs_apply') }}</span>
-                                            <img src="{{asset('assets-front')}}/images/icon/danger-arrow.svg" alt="icon" />
-                                        </a>
+                                        <div class="footer__top d-flex align-items-center flex-wrap gap-5 row-gap-3">
+                                            <a href="{{ url($job->link) }}" target="_blank" class="button button--link hover-add-underline d-flex align-items-center gap-3 job_link">
+                                                <span>{{ __('front.jobs_apply') }}</span>
+                                                <img src="{{asset('assets-front')}}/images/icon/danger-arrow.svg" alt="icon" />
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        @endif
 
 
 
