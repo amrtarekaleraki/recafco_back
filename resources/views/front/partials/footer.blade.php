@@ -1,5 +1,6 @@
 @php
     $socials = App\Models\Social::first();
+    $products = App\Models\Product::get();
 @endphp
 
 
@@ -38,9 +39,35 @@
                     <li><a href="{{ route('front.about') }}" target="_blank">{{ __('front.about') }}</a></li>
                     <li><a href="{{ route('front.construction') }}" target="_blank">{{ __('front.construction') }}</a></li>
                     <li><a href="{{ route('front.projects') }}" target="_blank">{{ __('front.projects') }}</a></li>
-                    <li><a href="{{ route('front.production') }}" target="_blank">{{ __('front.Precast') }}</a></li>
-                    <li><a href="{{ route('front.production') }}" target="_blank">{{ __('front.Hollowcore') }}</a></li>
-                    <li><a href="{{ route('front.production') }}" target="_blank">{{ __('front.GRC') }}</a></li>
+                    @foreach($products as $product)
+                        @if ($product->id == 1)
+                        <li>
+                            <a href="{{ route('front.hollowcore',$product) }}" target="_blank">
+                                {{ $product->title }}
+                            </a>
+                        </li>
+
+                        @elseif ($product->id == 4)
+                        <li>
+                            <a href="{{ route('front.precast',$product) }}" target="_blank">
+                                {{ $product->title }}
+                            </a>
+                        </li>
+
+                        @elseif ($product->id == 5)
+                        <li>
+                            <a href="{{ route('front.gfrc',$product) }}" target="_blank">
+                                {{ $product->title }}
+                            </a>
+                        </li>
+                        @elseif ($product->id == 6)
+                        <li>
+                            <a href="{{ route('front.patching_plant',$product) }}" target="_blank">
+                                {{ $product->title }}
+                            </a>
+                        </li>
+                        @endif
+                    @endforeach
                 </ul>
             </div>
         </div>
