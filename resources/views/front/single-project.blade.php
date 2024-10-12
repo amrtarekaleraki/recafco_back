@@ -166,10 +166,10 @@
                                         <!---->
                                         <div class="slider-footer">
                                             <h3>
-                                                {{ $relat->title }}
+                                                <a href="{{ route('front.singleproject',$relat) }}" style="color: #393939;">{{ $relat->title }}</a>
                                             </h3>
                                             <p>
-                                                {{ $relat->location }}
+                                                {{-- {{ $relat->location }} --}}
                                             </p>
                                         </div>
                                     </div>
