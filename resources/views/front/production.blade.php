@@ -9,7 +9,7 @@
 @section('production-active','active')
 
 @section('header')
-   @include('front.partials.all-pages-header')
+    @include('front.partials.header')
 @endsection
 
 @section('slider')

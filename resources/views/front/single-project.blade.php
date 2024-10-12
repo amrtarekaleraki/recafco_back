@@ -9,7 +9,7 @@
 @section('title','Single Project')
 
 @section('header')
-         @include('front.partials.header')
+      @include('front.partials.header')
 @endsection
 
 @section('slider')

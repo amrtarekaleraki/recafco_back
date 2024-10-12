@@ -9,7 +9,7 @@
 @section('title',__('front.notfound'))
 
 @section('header')
-   @include('front.partials.all-pages-header')
+     @include('front.partials.header')
 @endsection
 
 @section('slider')

@@ -31,7 +31,8 @@
                             <div class="container-fluid">
 
                                 <a href="{{ route('front.singleproject',$project) }}" class="button button--link hover-add-underline">
-                                    <span>{{ $project->product->title }}, <span>{{ $project->title }}</span></span>
+                                    {{-- {{ $project->product->title }}, --}}
+                                    <span> <span>{{ $project->title }}</span></span>
                                     <img src="{{asset('assets-front')}}/images/icon/danger-arrow.svg" alt="icon" />
                                 </a>
                                 <div class="mobile-only-section button-group">

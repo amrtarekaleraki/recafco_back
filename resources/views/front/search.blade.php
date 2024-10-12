@@ -7,7 +7,7 @@
 @section('title','Search')
 
 @section('header')
-   @include('front.partials.all-pages-header')
+     @include('front.partials.header')
 @endsection
 
 @section('slider')

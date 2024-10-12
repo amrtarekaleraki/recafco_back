@@ -7,7 +7,7 @@
 @section('title',__('front.grc_tab'))
 
 @section('header')
-   @include('front.partials.header')
+        @include('front.partials.header')
 @endsection
 
 

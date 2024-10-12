@@ -9,7 +9,7 @@
 @section('projects-active','active')
 
 @section('header')
-   @include('front.partials.all-pages-header')
+      @include('front.partials.header')
 @endsection
 
 @section('slider')
@@ -28,7 +28,8 @@
                     <div class="content-slider">
                         <div class="container-fluid">
                             <a href="{{ route('front.singleproject',$project) }}" class="button button--link hover-add-underline">
-                                <span>{{ $project->product->title }}, <span>{{ $project->title }}</span></span>
+                                {{-- {{ $project->product->title }}, --}}
+                                <span> <span>{{ $project->title }}</span></span>
                                 <img src="{{asset('assets-front')}}/images/icon/danger-arrow.svg" alt="icon" />
                             </a>
                         </div>
