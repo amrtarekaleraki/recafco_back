@@ -48,8 +48,7 @@
                     <div class="help-details-item">
                         <p>{{ __('front.contact_factory_title') }}</p>
                         <div class="mb-3">
-                            <span class="d-block">{!! $socials->factory_location !!}</span>
-
+                            <span class="d-block">{{  $socials->factory_location }}</span>
                         </div>
                         <div class="d-flex align-items-center gap-4">
                             <span>{{ __('front.contact_factory_phone') }}</span>
@@ -63,7 +62,7 @@
                     <div class="help-details-item">
                         <p>{{ __('front.contact_office_title') }}</p>
                         <div class="mb-3">
-                            <span class="d-block">{!! $socials->office_location !!}</span>
+                            <span class="d-block">{{  $socials->office_location }}</span>
                         </div>
                         <div class="d-flex align-items-center gap-4">
                             <span>{{ __('front.contact_factory_phone') }}</span>

@@ -93,3 +93,25 @@
         </div>
     </div>
 @endsection
+
+
+@push('scripts')
+
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        menubar: false,
+        content_css: 'https://cdn.tiny.cloud/1/no-api-key/tinymce/6/skins/ui/oxide/skin.min.css',
+        plugins: 'advlist autolink lists link image charmap print preview anchor',
+        toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
+        height: 300,
+        setup: function (editor) {
+            editor.on('init', function () {
+                // Reset the content CSS to make sure no bold formatting is applied
+                editor.getBody().style.fontWeight = 'normal';
+            });
+        }
+    });
+</script>
+
+@endpush
