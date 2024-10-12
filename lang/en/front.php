@@ -238,5 +238,8 @@ return [
     'notfound_msg' => 'We couldn`t find this page.',
     'search_result' => 'Search Results for',
     'no_results' => 'Sorry, no results found for',
+    'client' => 'Client',
+    'category' => 'CATEGORY',
+    'scope' => 'SCOPE',
 
 ];

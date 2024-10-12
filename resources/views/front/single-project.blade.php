@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-lg-7 col-md-12">
                         <div class="content d-flex flex-column row-gap-1">
-                            <span>PROJECTS</span>
+                            <span>{{ __('front.projects_header') }}</span>
                             <h3>{{ $project->title }}</h3>
                             <span class="location">{{ $project->location }}</span>
                         </div>
@@ -48,21 +48,21 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="project-category-item">
-                            <h3 class="mb-3">CLIENT</h3>
+                            <h3 class="mb-3">{{ __('front.client') }}</h3>
                             <p>{{ $project->client }}</p>
                         </div>
                     </div>
                     <!---->
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="project-category-item">
-                            <h3 class="mb-3">CATEGORY</h3>
+                            <h3 class="mb-3">{{ __('front.category') }}</h3>
                             <p>{{ $project->category->title }}</p>
                         </div>
                     </div>
                     <!---->
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="project-category-item">
-                            <h3 class="mb-3">SCOPE</h3>
+                            <h3 class="mb-3">{{ __('front.scope') }}</h3>
                             <p>{{ $project->product->title}}</p>
                         </div>
                     </div>
