@@ -14,13 +14,30 @@
 
 @section('slider')
 
-        <section
-        class="hero-section  without-overlay position-relative d-flex flex-column align-items-center justify-content-center"
+        {{-- <section data-aos="zoom-out-up" class="hero-section  without-overlay position-relative d-flex flex-column align-items-center justify-content-center"
         style="background: url({{ asset("storage/project_image1/$project->image") }});">
-        <div class="container">
 
+        <div class="container">
         </div>
+        </section> --}}
+
+        <section data-aos="zoom-out-up" class="hero-section without-overlay position-relative d-flex flex-column align-items-center justify-content-center"
+            style="background: url('{{ asset("storage/project_image1/$project->image") }}') no-repeat center center / cover;">
+            <div class="container">
+                <!-- Content goes here -->
+            </div>
         </section>
+
+        {{-- <section class="hero-section without-overlay position-relative d-flex flex-column align-items-center justify-content-center">
+            <img src="{{ asset('storage/project_image1/' . $project->image) }}"
+                 alt="Project Image"
+                 class="hero-image"
+                 loading="lazy">
+            <div class="container">
+                <!-- Content goes here -->
+            </div>
+        </section> --}}
+
 
 
 @endsection
@@ -112,7 +129,8 @@
                             @foreach($images as $image)
                                 <div class="swiper-slide">
                                     <div class="swiper-image">
-                                        <div class="image" style="background: url({{ asset('storage/project_slider/' . $image) }});"></div>
+                                        <img class="image" src="{{ asset('storage/project_slider/' . $image) }}" alt="Slider Image" loading="lazy" class="swiper-image">
+                                        {{-- <div class="image" style="background: url({{ asset('storage/project_slider/' . $image) }});"></div> --}}
                                     </div>
                                 </div>
                             @endforeach
@@ -225,6 +243,25 @@
 
 @endsection
 
+
+@push('scripts')
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const heroSection = document.querySelector('.hero-section');
+            const imageUrl = '{{ asset("storage/project_image1/$project->image") }}';
+
+            // Create a new Image object
+            const img = new Image();
+            img.src = imageUrl;
+            img.onload = function() {
+                // Once the image is loaded, set it as the background
+                heroSection.style.backgroundImage = url('${imageUrl}');
+            };
+        });
+    </script>
+
+@endpush
 
 
 
