@@ -27,7 +27,7 @@
                 <h3 class="mb-4">{{ __('front.production_desc') }}</h3>
                 <div class="tags d-flex flex-wrap align-items-center gap-3 row-gap-1">
                     @foreach($products as $product)
-                       <a href="#" class="button button--link hover-add-underline">{{ $product->title }}</a>
+                       <a href="#{{ $product->id }}" class="button button--link hover-add-underline">{{ $product->title }}</a>
                     @endforeach
 
                 </div>
@@ -75,7 +75,7 @@
                 <div class="container">
 
                     @foreach($products as $product)
-                        <div class="row align-items-center">
+                        <div class="row align-items-center" id="{{ $product->id }}">
 
                             <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
                                 <div class="overview-items-details">
