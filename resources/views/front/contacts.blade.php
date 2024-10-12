@@ -26,7 +26,7 @@
                 </p>
                 <h3 class="mb-4">{{ __('front.contact_desc') }}</h3>
                 <div class="tags d-flex flex-wrap align-items-center gap-3 row-gap-1">
-                    <a href="#" class="button button--link hover-add-underline">{{ __('front.contact_message_header') }}</a>
+                    <a href="#formcontact" class="button button--link hover-add-underline">{{ __('front.contact_message_header') }}</a>
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 {{-- start form --}}
-                <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4" id="formcontact">
                     <x-success-alert></x-success-alert>
                     <form id="yourFormId" action="{{ route('front.storecontact') }}" method="POST">
                         @csrf
