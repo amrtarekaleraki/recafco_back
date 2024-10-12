@@ -78,7 +78,7 @@
                     <p class="mb-3">
                          {!! $project->description !!}
                     </p>
-                    <a href="{{ route('front.projects') }}" class="button button--primary bg-red hover-add-swipe">
+                    <a href="{{ route('front.projects') }}" class="button button--primary bg-red hover-add-swipe mt-3">
                         {{ __('keywords.all_projects') }}
                     </a>
                 </div>
