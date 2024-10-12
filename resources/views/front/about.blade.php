@@ -40,11 +40,11 @@
             </p>
             <h3 class="mb-4">{{ __('front.about_desc') }}</h3>
             <div class="tags d-flex flex-wrap align-items-center gap-3 row-gap-1">
-                <a href="#" class="button button--link hover-add-underline">{{ __('front.mission_link') }}</a>
-                <a href="#" class="button button--link hover-add-underline">{{ __('front.legacy_link') }}</a>
-                <a href="#" class="button button--link hover-add-underline">{{ __('front.qa_link') }}</a>
-                <a href="#" class="button button--link hover-add-underline">{{ __('front.hse_link') }}</a>
-                <a href="#" class="button button--link hover-add-underline">{{ __('front.snapshot_link') }}</a>
+                <a href="#mission" class="button button--link hover-add-underline">{{ __('front.mission_link') }}</a>
+                <a href="#legacy" class="button button--link hover-add-underline">{{ __('front.legacy_link') }}</a>
+                <a href="#qa" class="button button--link hover-add-underline">{{ __('front.qa_link') }}</a>
+                <a href="#hse" class="button button--link hover-add-underline">{{ __('front.hse_link') }}</a>
+                <a href="#snapshot" class="button button--link hover-add-underline">{{ __('front.snapshot_link') }}</a>
             </div>
         </div>
     </div>
@@ -58,7 +58,7 @@
 
     <div class="about-page">
         <!--MISSION & VALUES-->
-        <div class="about-section mission-vission padding-section" data-aos="fade-up">
+        <div id="mission" class="about-section mission-vission padding-section" data-aos="fade-up">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-5 col-sm-12 mb-3">
@@ -84,7 +84,7 @@
             </div>
         </div>
         <!--OUR LEGACY-->
-        <div class="our-legacy position-relative padding-section">
+        <div id="legacy" class="our-legacy position-relative padding-section">
             <div class="container-fluid p-0">
                 <div class="body-description-part absolute-position">
                     <h3 class="mb-3">{{ __('front.legacy_script_title') }}</h3>
@@ -105,7 +105,7 @@
                 </div>
             </div>
         </div>
-        <!--MISSION & VALUES-->
+        <!--trusted-->
         <div class="about-section mission-vission padding-section">
             <div class="container">
                 <div class="row align-items-center">
@@ -133,7 +133,7 @@
         </div>
 
         <!--Quality Assurance-->
-        <div class="quality-assurance position-relative padding-section bg-grey-section">
+        <div id="qa" class="quality-assurance position-relative padding-section bg-grey-section">
             <div class="container-fluid p-0">
                 <div class="body-description-part absolute-position reverse-col">
                     <h3 class="mb-3">{{ __('front.quality_script_title') }}</h3>
@@ -155,8 +155,8 @@
                 </div>
             </div>
         </div>
-        <!--------------->
-        <div class="about-section reverse-mission-vission padding-section bg-grey-section">
+        <!------hse--------->
+        <div id="hse" class="about-section reverse-mission-vission padding-section bg-grey-section">
             <div class="container">
                 <div class="row align-items-center">
                     <!---->
@@ -182,8 +182,8 @@
                 </div>
             </div>
         </div>
-        <!--------------->
-        <div class="company-snapshot">
+        <!--------snapshot------->
+        <div id="snapshot" class="company-snapshot">
             <div class="container">
                 <h4 class="mb-5">{{ __('front.COMPANY_SNAPSHOT') }}</h4>
                 <div class="row justify-content-center">
