@@ -8,7 +8,7 @@
 <style>
     .job_title
     {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         text-decoration: underline;
         text-decoration-color: #767577 !important;
         text-decoration-thickness: 2px;
@@ -18,10 +18,10 @@
     }
     .job_link
     {
-        color: black;
-        font-weight:700;
-        font-size:32px;
-        line-height: 50px;
+        font-size: 1.15rem;
+        color: #393939;
+        font-family: "avenir-bold", sans-serif;
+        text-transform: uppercase;
     }
 
 </style>
@@ -62,13 +62,14 @@
         <section class="bg-white">
             <div class="overview padding-section">
                 <div class="container">
-                    <div class="row mb-4">
+                    <div class="row">
                         <div class="col-12 mb-5">
                             <h4 class="mb-4">{{ __('front.jobs_overview') }}</h4>
                             <p>
                                 {{ __('front.jobs_description') }}
                             </p>
                         </div>
+
 
                         @if (count($jobs) > 0)
                             @foreach($jobs as $job)
@@ -81,7 +82,7 @@
                                         <div class="footer__top d-flex align-items-center flex-wrap gap-5 row-gap-3">
                                             <a href="{{ url($job->link) }}" target="_blank" class="button button--link hover-add-underline d-flex align-items-center gap-3 job_link">
                                                 <span>{{ __('front.jobs_apply') }}</span>
-                                                <img src="{{asset('assets-front')}}/images/icon/danger-arrow.svg" alt="icon" />
+                                                {{-- <img src="{{asset('assets-front')}}/images/icon/danger-arrow.svg" alt="icon" /> --}}
                                             </a>
                                         </div>
                                     </div>
