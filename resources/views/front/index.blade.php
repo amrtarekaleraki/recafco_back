@@ -138,7 +138,7 @@
                         <div class="row justify-content-end">
                             <div class="col-lg-7 col-md-12 col-sm-12">
                                 <p>
-                                    {{ __('front.second_sec_desc1') }}
+                                    {!! __('front.second_sec_desc1') !!}
                                 </p>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
                         <div class="row justify-content-end">
                             <div class="col-lg-7 col-md-12 col-sm-12">
                                 <p>
-                                    {{ __('front.second_sec_desc2') }}
+                                    {!! __('front.second_sec_desc2') !!}
                                 </p>
                             </div>
                         </div>

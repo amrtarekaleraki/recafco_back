@@ -11,8 +11,8 @@ return [
     'Years' => 'Years',
 
     // home second section
-    'second_sec_desc1' => 'RECAFCO drives Kuwaits growth through exceptional manufacturing and mega-project execution aligning with global standards and the Kuwait 2035 vision.',
-    'second_sec_desc2' => 'Advanced machinery fills our 80,000 m² facility. One of the few companies ranked as category 1 in general contracting by Central Agency for Public Tenders.',
+    'second_sec_desc1' => '<span>RECAFCO</span> drives Kuwait’s growth through exceptional manufacturing and the execution of mega-projects in alignment with global standards and <span>Kuwait 2035 vision</span>.',
+    'second_sec_desc2' => '<p>Advanced machinery fills our <span>80,000 m²</span> facility. One of the few companies ranked as <span>category 1</span> in general contracting by the <span>Central Agency for Public Tenders</span>.</p>',
 
     // home counter
     'count_projects' => 'Completed projects',
