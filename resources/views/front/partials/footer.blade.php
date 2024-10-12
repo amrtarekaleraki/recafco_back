@@ -10,7 +10,7 @@
             <div class="logo">
                 <img src="{{asset('assets-front')}}/images/logo/color-recafco-logo.svg" alt="Logo" />
             </div>
-            <a href="{{ route('front.projects') }}" class="button button--link hover-add-underline d-flex align-items-center gap-3">
+            <a href="{{ route('front.contacts') }}" class="button button--link hover-add-underline d-flex align-items-center gap-3">
                 <span>{{ __('front.for_sales_inquiries') }}</span>
                 <img src="{{asset('assets-front')}}/images/icon/danger-arrow.svg" alt="icon" />
             </a>
