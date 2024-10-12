@@ -148,61 +148,64 @@
             </div>
         </div>
         <!--related Project-->
-        <div class="related-project">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-md-12 col-sm-12">
-                        <h5 class="title">{{ __('keywords.related') }}</h5>
-                    </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12 position-relative">
-                        <div class="d-flex flex-wrap align-items-center justify-content-between row-gap-3">
-                            <a href="{{ route('front.projects') }}" class="button button--primary bg-red hover-add-swipe">
-                                {{ __('keywords.all_projects') }}
-                            </a>
-                            <div class="arrow">
-                                <div class="swiper-button-next position-relative arrow-related-proj">
-                                    <img src="{{asset('assets-front')}}/images/icon/arrow-right.svg" alt="icon" />
-                                </div>
-                                <div class="swiper-button-prev position-relative arrow-related-proj">
-                                    <img src="{{asset('assets-front')}}/images/icon/arrow-left.svg" alt="icon" />
+        @if (count($related) > 0)
+            <div class="related-project">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12 col-sm-12">
+                            <h5 class="title">{{ __('keywords.related') }}</h5>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12 position-relative">
+                            <div class="d-flex flex-wrap align-items-center justify-content-between row-gap-3">
+                                <a href="{{ route('front.projects') }}" class="button button--primary bg-red hover-add-swipe">
+                                    {{ __('keywords.all_projects') }}
+                                </a>
+                                <div class="arrow">
+                                    <div class="swiper-button-next position-relative arrow-related-proj">
+                                        <img src="{{asset('assets-front')}}/images/icon/arrow-right.svg" alt="icon" />
+                                    </div>
+                                    <div class="swiper-button-prev position-relative arrow-related-proj">
+                                        <img src="{{asset('assets-front')}}/images/icon/arrow-left.svg" alt="icon" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Swiper -->
-                <div class="swiper mySwiper related-project">
-                    <div class="swiper-wrapper">
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper related-project">
+                        <div class="swiper-wrapper">
 
-                        @if (count($related) > 0)
-                            @foreach ($related as $relat)
-                                <div class="swiper-slide">
-                                    <div class="slider-item">
-                                        <div class="slider-body mb-4">
-                                            <img class="img-fluid" src="{{ asset("storage/project_image1/$relat->image") }}" alt="image" />
-                                        </div>
-                                        <!---->
-                                        <div class="slider-footer">
-                                            <h3>
-                                                <a href="{{ route('front.singleproject',$relat) }}" style="color: #393939;">{{ $relat->title }}</a>
-                                            </h3>
-                                            <p>
-                                                {{-- {{ $relat->location }} --}}
-                                            </p>
+
+                                @foreach ($related as $relat)
+                                    <div class="swiper-slide">
+                                        <div class="slider-item">
+                                            <div class="slider-body mb-4">
+                                                <img class="img-fluid" src="{{ asset("storage/project_image1/$relat->image") }}" alt="image" />
+                                            </div>
+                                            <!---->
+                                            <div class="slider-footer">
+                                                <h3>
+                                                    <a href="{{ route('front.singleproject',$relat) }}" style="color: #393939;">{{ $relat->title }}</a>
+                                                </h3>
+                                                <p>
+                                                    {{-- {{ $relat->location }} --}}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
-                        @endif
+                                @endforeach
 
 
 
 
 
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
+        {{-- end related --}}
     </div>
 
     <!---->
