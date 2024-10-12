@@ -23,7 +23,7 @@
             <h3 class="mb-4">{{ __('front.construction_desc') }}</h3>
             <div class="tags d-flex flex-wrap align-items-center gap-3 row-gap-1">
                 @foreach($categories as $category)
-                   <a href="#" class="button button--link hover-add-underline">{{ $category->title }}</a>
+                   <a href="#{{ $category->id }}" class="button button--link hover-add-underline">{{ $category->title }}</a>
                 @endforeach
             </div>
         </div>
@@ -71,7 +71,7 @@
             <div class="portfolio-items">
 
                 @foreach($categories as $category)
-                    <a href="{{ route('front.projects') }}">
+                    <a href="{{ route('front.projects') }}" id="{{ $category->id }}">
                         <span class="portfolio-type">
                             <img width="2500" height="1000" src="{{ asset("storage/categories/$category->image") }}">
                             <span class="type">{{ $category->title }}</span>
