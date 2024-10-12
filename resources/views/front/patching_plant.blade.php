@@ -110,7 +110,8 @@
                                 @foreach($images as $image)
                                     <div class="swiper-slide">
                                         <div class="swiper-image">
-                                        <div class="image" style="background: url({{ asset('storage/products_slider_images/' . $image) }});"></div>
+                                            <img class="image" src="{{ asset('storage/products_slider_images/' . $image) }}" alt="Slider Image" loading="lazy" class="swiper-image">
+                                            {{-- <div class="image" style="background: url({{ asset('storage/products_slider_images/' . $image) }});"></div> --}}
                                         </div>
                                     </div>
                                 @endforeach
