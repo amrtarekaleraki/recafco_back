@@ -147,7 +147,7 @@
                                   <div class="col-md-6">
                                     <div class="form-group mb-3">
                                       <x-form-label field="value"></x-form-label>
-                                      <input type="number" name="value" class="form-control" value="{{ $project->value }}" placeholder="{{ __('keywords.value') }}">
+                                      <input type="text" name="value" class="form-control" value="{{ $project->value }}" placeholder="{{ __('keywords.value') }}">
                                       <x-validation-error field="value"></x-validation-error>
                                     </div>
                                 </div>

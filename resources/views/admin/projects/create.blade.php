@@ -108,7 +108,7 @@
                                   <div class="col-md-6">
                                         <div class="form-group mb-3">
                                         <x-form-label field="value"></x-form-label>
-                                        <input type="number" name="value" class="form-control">
+                                        <input type="text" name="value" class="form-control">
                                         <x-validation-error field="value"></x-validation-error>
                                         </div>
                                   </div>
