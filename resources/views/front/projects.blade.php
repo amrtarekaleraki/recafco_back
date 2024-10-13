@@ -66,7 +66,9 @@
             @foreach($categories as $category)
                 @if(isset($projectCounts[$category->id]) && $projectCounts[$category->id] > 0)
                     <li>
-                        <button class="btn btn-filter-taps" id="{{ strtolower($category->title) }}">{{ ucfirst($category->title) }}</button>
+                        <button class="btn btn-filter-taps" id="{{ strtolower(str_replace(' ', '-', $category->title)) }}">
+                            {{ ucfirst($category->title) }}
+                        </button>
                     </li>
                 @endif
             @endforeach
@@ -75,13 +77,13 @@
         <div class="tab-content">
             <div class="row" id="parent">
                 @foreach($projects as $project)
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-3 box {{ strtolower($project->category->title) }}">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-3 box {{ strtolower(str_replace(' ', '-', $project->category->title)) }}">
                         <div class="filter-result-box">
                             <div class="image">
                                 <img class="w-100 img-fluid" src="{{ asset("storage/project_image1/$project->image") }}" alt="image" />
                             </div>
                             <a href="{{ route('front.singleproject',$project) }}" class="content-overlay">
-                                <p class="mb-2">{{ $project->title }}</p> <!-- Assuming you have a title field -->
+                                <p class="mb-2">{{ $project->title }}</p>
                                 <span>{{ ucfirst($project->category->title) }}</span>
                             </a>
                         </div>
@@ -95,27 +97,27 @@
 <script>
     // JavaScript to filter projects
     document.querySelectorAll('.btn-filter-taps').forEach(button => {
-        button.addEventListener('click', () => {
-            const category = button.id;
-            const projects = document.querySelectorAll('.box');
+    button.addEventListener('click', () => {
+        const category = button.id;
+        const projects = document.querySelectorAll('.box');
 
-            projects.forEach(project => {
-                // Show all projects if 'all' is selected
-                if (category === 'all') {
-                    project.style.display = 'block';
-                } else {
-                    // Show or hide projects based on their category
-                    project.style.display = project.classList.contains(category) ? 'block' : 'none';
-                }
-            });
-
-            // Update active button
-            document.querySelectorAll('.btn-filter-taps').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            button.classList.add('active');
+        projects.forEach(project => {
+            // Show all projects if 'all' is selected
+            if (category === 'all') {
+                project.style.display = 'block';
+            } else {
+                // Show or hide projects based on their category (replace spaces with dashes)
+                project.style.display = project.classList.contains(category) ? 'block' : 'none';
+            }
         });
+
+        // Update active button
+        document.querySelectorAll('.btn-filter-taps').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        button.classList.add('active');
     });
+});
 </script>
 
     <!---->
