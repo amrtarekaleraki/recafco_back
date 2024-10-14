@@ -7,7 +7,9 @@
     <nav class="navbar navbar-expand-lg menu-sticky">
         <div class="container-fluid">
             <a class="navbar-brand desktop-only" href="{{ route('front.index') }}">
-                <img src="{{asset('assets-front')}}/images/logo/color-recafco-logo.svg" alt="Logo" />
+                {{-- <img src="{{asset('assets-front')}}/images/logo/color-recafco-logo.svg" alt="Logo" /> --}}
+                <img src="{{asset('assets-front')}}/images/logo/recafco-logo.png" alt="image" />
+
             </a>
             <button class="navbar-toggle" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -17,7 +19,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!----------------------------------------------------------------->
                 <div class="header-nav-mobile-only">
-                    <img src="{{asset('assets-front')}}/images/logo/color-recafco-logo.svg" alt="Logo" />
+                    {{-- <img src="{{asset('assets-front')}}/images/logo/color-recafco-logo.svg" alt="Logo" /> --}}
+                    <img src="{{asset('assets-front')}}/images/logo/recafco-logo.png" alt="image" style="width: 30%;" />
                     <a href="{{ route('front.switch', ['lang' => session('locale') == 'en' ? 'ar' : 'en']) }}" class="language-btn">{{ session('locale') == 'en' ? 'العربية' : 'En' }}</a>
                 </div>
                 <!----------------------------------------------------------------->
@@ -113,5 +116,6 @@
     </div>
 </header>
 <div class="logo-mobile">
-    <img src="{{asset('assets-front')}}/images/logo/color-recafco-logo.svg" alt="image" />
+    {{-- <img src="{{asset('assets-front')}}/images/logo/color-recafco-logo.svg" alt="image" /> --}}
+    <img src="{{asset('assets-front')}}/images/logo/recafco-logo.png" alt="image" style="width: 30%;"/>
 </div>

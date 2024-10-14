@@ -9,7 +9,8 @@
         <!---->
         <div class="footer__top d-flex align-items-center flex-wrap gap-5 row-gap-3">
             <div class="logo">
-                <img src="{{asset('assets-front')}}/images/logo/color-recafco-logo.svg" alt="Logo" />
+                {{-- <img src="{{asset('assets-front')}}/images/logo/color-recafco-logo.svg" alt="Logo" /> --}}
+                <img src="{{asset('assets-front')}}/images/logo/recafco-logo.png" alt="Logo" />
             </div>
             <a href="{{ route('front.contacts') }}" class="button button--link hover-add-underline d-flex align-items-center gap-3">
                 <span>{{ __('front.for_sales_inquiries') }}</span>
