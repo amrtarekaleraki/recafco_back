@@ -1297,6 +1297,7 @@ img.search {
         }
 
         .item {
+            overflow: hidden;
             @media (max-width: 769px) {
                 margin-bottom: 6rem;
 
@@ -3773,6 +3774,7 @@ footer {
 
 .mobile-upper-text {
     h4 {
+        text-align: center;
         font-family: 'GE-SS-Two-Bold';
         span {
             font-family: 'GE-SS-Two-Light';
@@ -3899,7 +3901,9 @@ footer {
         }
         .tags {
             .button {
-                font-family: 'GE-SS-Two-Bold';
+                font-family: 'GE-SS-Two-Light';
+                font-weight: 500;
+                font-size: 1.325rem;
             }
         }
     }

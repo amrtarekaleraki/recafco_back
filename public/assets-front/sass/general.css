@@ -2107,6 +2107,9 @@ html[dir=ltr] .logo-with-description .swiper-slide:not(:last-child)::after {
     background: #393939;
   }
 }
+.interactive-section .interactive-section-counter .item {
+  overflow: hidden;
+}
 @media (max-width: 769px) {
   .interactive-section .interactive-section-counter .item {
     margin-bottom: 6rem;
@@ -4273,6 +4276,7 @@ html[dir=rtl] .build-together .build-together-image-part .text-image .button {
   font-family: "GE-SS-Two-Bold";
 }
 html[dir=rtl] .mobile-upper-text h4 {
+  text-align: center;
   font-family: "GE-SS-Two-Bold";
 }
 html[dir=rtl] .mobile-upper-text h4 span {
@@ -4349,7 +4353,9 @@ html[dir=rtl] .hero-section .text-box h3 {
   font-family: "GE-SS-Two-Bold";
 }
 html[dir=rtl] .hero-section .text-box .tags .button {
-  font-family: "GE-SS-Two-Bold";
+  font-family: "GE-SS-Two-Light";
+  font-weight: 500;
+  font-size: 1.325rem;
 }
 html[dir=rtl] .mobile-only-section {
   display: none;
