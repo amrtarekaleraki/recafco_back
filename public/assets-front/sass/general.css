@@ -1526,7 +1526,7 @@ img.search {
   display: none;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 769px) {
   .icon-mobile {
     display: block;
   }
@@ -2107,8 +2107,10 @@ html[dir=ltr] .logo-with-description .swiper-slide:not(:last-child)::after {
     background: #393939;
   }
 }
-.interactive-section .interactive-section-counter .item {
-  overflow: hidden;
+@media (min-width: 992px) {
+  .interactive-section .interactive-section-counter .item {
+    overflow: hidden;
+  }
 }
 @media (max-width: 769px) {
   .interactive-section .interactive-section-counter .item {
@@ -4394,7 +4396,7 @@ html[dir=rtl] .sucess-partner h2 {
   font-family: "GE-SS-Two-Bold";
 }
 
-@media (max-width: 991px) {
+@media (max-width: 769px) {
   .desktop-only {
     display: none !important;
   }

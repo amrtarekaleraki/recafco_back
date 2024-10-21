@@ -636,7 +636,7 @@ img.search {
 
 }
 
-@media (max-width: 991px) {
+@media (max-width: 769px) {
     .icon-mobile {
         display: block;
     }
@@ -1297,7 +1297,10 @@ img.search {
         }
 
         .item {
-            overflow: hidden;
+            
+            @media (min-width: 992px){
+                overflow: hidden;
+            }
             @media (max-width: 769px) {
                 margin-bottom: 6rem;
 
@@ -3968,7 +3971,7 @@ footer {
     }
 }
 }
-@media (max-width: 991px){
+@media (max-width: 769px){
     .desktop-only{
         display: none !important;
     }
