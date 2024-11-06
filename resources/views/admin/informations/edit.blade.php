@@ -53,7 +53,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
                                       <x-form-label field="annual"></x-form-label>
-                                      <input type="number" name="annual" class="form-control" value="{{ $information->annual }}">
+                                      <input type="text" name="annual" class="form-control" value="{{ $information->annual }}">
                                       <x-validation-error field="annual"></x-validation-error>
                                     </div>
                                 </div>
