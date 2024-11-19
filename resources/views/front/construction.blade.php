@@ -58,8 +58,7 @@
                     <div class="col-lg-6 col-md-12">
                         <div class='container_sec image-section'>
                             <div class='reveal'>
-                                <img class="img-fluid w-100" src="{{asset('assets-front')}}/images/global-image/construction.png"
-                                    alt="image" />
+                                <img class="img-fluid w-100" src="{{asset('assets-front')}}/images/global-image/construction.png" alt="image" />
                             </div>
                         </div>
                     </div>
@@ -88,8 +87,7 @@
                     <div class="col-lg-6 col-md-12">
                         <div class='container_sec image-section'>
                             <div class='reveal'>
-                                <img class="img-fluid w-100" src="{{asset('assets-front')}}/images/global-image/construction.png"
-                                    alt="image" />
+                                <img class="img-fluid w-100" src="{{asset('assets-front')}}/images/global-image/9.jpg" alt="image" />
                             </div>
                         </div>
                     </div>

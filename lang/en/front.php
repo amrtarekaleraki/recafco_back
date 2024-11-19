@@ -96,7 +96,7 @@ return [
     'construction_first_desc' => 'RECAFCO  commitment to excellence shines through in our cost-effective projects, delivered without sacrificing quality, schedule, or design.
     Our success is fueled by a diverse team of skilled professionals and experienced leadership.',
 
-    'construction_learn_more' => 'Learn More',
+    'construction_learn_more' => 'About Us',
     'construction_trusted_title' => 'TRUSTED PARTNER',
     'construction_trusted_desc' => 'As a Class 1 contractor for general construction, we have earned our reputation as a leading force in Kuwait construction industry.Our integrated engineering solutions and proven expertise have enabled us to successfully undertake major projects across the country.',
 
